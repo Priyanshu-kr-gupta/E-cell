@@ -1,0 +1,62 @@
+[
+    {
+        "name":"dummy name",
+        "intro":"this will give the brief intro about the speaker",
+        "image":"dummyimage.jpg"
+    },
+    
+    {
+        "name":"dummy name",
+        "intro":"this will give the brief intro about the speaker",
+        "image":"dummyimage.jpg"
+    },
+
+    {
+        "name":"dummy name",
+        "intro":"this will give the brief intro about the speaker",
+        "image":"dummyimage.jpg"
+    },
+
+    {
+        "name":"dummy name",
+        "intro":"this will give the brief intro about the speaker",
+        "image":"dummyimage.jpg"
+    },
+
+    {
+        "name":"dummy name",
+        "intro":"this will give the brief intro about the speaker",
+        "image":"dummyimage.jpg"
+    },
+
+    {
+        "name":"dummy name",
+        "intro":"this will give the brief intro about the speaker",
+        "image":"dummyimage.jpg"
+    },
+
+    {
+        "name":"dummy name",
+        "intro":"this will give the brief intro about the speaker",
+        "image":"dummyimage.jpg"
+    },
+
+    {
+        "name":"dummy name",
+        "intro":"this will give the brief intro about the speaker",
+        "image":"dummyimage.jpg"
+    },
+
+    {
+        "name":"dummy name",
+        "intro":"this will give the brief intro about the speaker",
+        "image":"dummyimage.jpg"
+    },
+
+    {
+        "name":"dummy name",
+        "intro":"this will give the brief intro about the speaker",
+        "image":"dummyimage.jpg"
+    }
+
+]

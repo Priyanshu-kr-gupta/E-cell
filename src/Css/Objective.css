@@ -1,0 +1,57 @@
+.objectivecontainer {
+    width: 100%;
+    height: auto;
+  }
+  
+  .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    scroll-snap-align: start;
+    padding: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  
+  #mission {
+    background-color: #303633;
+    /* background-color:  #253C44; */
+   
+    color: white;
+  }
+  
+  #goal {
+    background-color: #202729;
+    /* background-color: #01FEFF; */
+    color: white;
+  }
+  
+  #vision {
+    background-color: #303633;
+    color: white;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    transition: all ease 0.5s;
+  }
+  
+  p {
+    transition: all ease 0.5s;
+
+    font-size: 1.5rem;
+    text-align: center;
+    max-width: 900px;
+  }
+  
+  @media (max-width:650px)
+  {
+    p {
+    
+        font-size: 1.2rem;
+      }
+        
+  }
