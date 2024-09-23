@@ -10,6 +10,7 @@
     align-items: center;
     height: 100vh;
     scroll-snap-align: start;
+    position:relative;
     padding: 20px;
     overflow: hidden;
     box-sizing: border-box;
@@ -18,29 +19,90 @@
   #mission {
     background-color: #303633;
     /* background-color:  #253C44; */
-   
     color: white;
   }
-  
+  #mission::after{
+    content: "";
+    width: 20%;
+    z-index: 0;
+    height: 20%;
+    background: #202729;
+    position: absolute;
+    bottom: 0;
+    right: 0%;
+  }
+  #mission::before{
+    content: "";
+    width: 20%;
+    z-index: 0;
+    height: 10%;
+    background: #202729;
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+  }
   #goal {
     background-color: #202729;
     /* background-color: #01FEFF; */
     color: white;
   }
   
+  #goal::after{
+    content: "";
+    width: 20%;
+    z-index: 0;
+    height: 20%;
+    background: #303630;
+    position: absolute;
+    top: 0;
+    right: 20%;
+  }
+  #goal::before{
+    content: "";
+    width: 20%;
+    z-index: 0;
+    height: 10%;
+    background: #303630;
+    position: absolute;
+    top: 0;
+    left: 20%;
+  }
   #vision {
     background-color: #303633;
     color: white;
+  }
+  #vision::after{
+    content: "";
+    width: 20%;
+    z-index: 0;
+    height: 10%;
+    background: #202729;
+    position: absolute;
+    top: 0;
+    left: 20%;
+  }
+  #vision::before{
+    content: "";
+    width: 20%;
+    z-index: 0;
+    height: 20%;
+    background:#202729;
+    position: absolute;
+    top: 0;
+    right: 20%;
   }
   
   h1 {
     font-size: 3rem;
     margin-bottom: 20px;
     transition: all ease 0.5s;
+    z-index: 1;
+    
   }
   
   p {
     transition: all ease 0.5s;
+    z-index: 1;
 
     font-size: 1.5rem;
     text-align: center;
