@@ -17,8 +17,8 @@ export default function Sidebar() {
         onClick={toggleMenu}
       >
         <span
-          className={`block h-1  mb-1 transition-transform ease-in-out duration-200 bg-white   ${
-            menuOpen ? 'transform rotate-45 translate-y-2 w-8 bg-black ' : 'w-5 '
+          className={`block h-1  mb-1 transition-transform ease-in-out duration-200    ${
+            menuOpen ? 'transform rotate-45 translate-y-2 w-8 bg-black ' : 'w-5 bg-white'
           }`}
         ></span>
         <span
@@ -27,8 +27,8 @@ export default function Sidebar() {
           }`}
         ></span>
         <span
-          className={`block h-1  mb-1 transition-transform ease-in-out duration-200 bg-white ${
-            menuOpen ? 'transform -rotate-45 w-8 -translate-y-2 bg-black' : 'w-5 '
+          className={`block h-1  mb-1 transition-transform ease-in-out duration-200  ${
+            menuOpen ? 'transform -rotate-45 w-8 -translate-y-2 bg-black' : 'w-5 bg-white'
           }`}
         ></span>
       </div>
