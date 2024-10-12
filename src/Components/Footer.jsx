@@ -1,32 +1,35 @@
-import "./Footer.css";
+import "../Css/Footer.css";
 import { FaSquareFacebook } from "react-icons/fa6";
 import { FaSquareTwitter } from "react-icons/fa6";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
-
+import logo from "../assets/logo.png"
 export default function Footer() {
   return (
-    // <div className="w-full h-[50vh] bg-zinc-800 flex justify-center items-center text-white">
+    // <div className="w-full h-[50vh]flex justify-center items-center text-white">
     // <p>Footer</p>
 
-    <div className="footer">
+    <div className="footer  bg-zinc-800 ">
+    <div className="w-full  pl-5 flex items-center font-semibold text-[20px]"><img src={logo} alt="" className="w-[150px]"/>Nit Jamshedpur</div>
       <div className="container">
         <div className="row">
           <div className="col-md-4">
             <div className="footer-col">
-              <h4>About us</h4>
+              <h4>CONTACT US</h4>
+              
               <p>
-                CONTACT US
+                
                 <br /> Phone :{" "}
                 <span>
                   <a href="tel:+917740929509,+917355797206">
-                    8809257745,7359687206
+                    8809257745 , 7359687206
                   </a>
                 </span>
                 <br /> Email : entrepreneurship@nitjsr.ac.in
               </p>
             </div>
           </div>
+          
           <div className="col-md-4">
             <div className="footer-col middle">
               <h4>Important Links</h4>
@@ -98,6 +101,8 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <div className="w-full pt-10 ">Made with ❤️ by team E-cell</div>
+      <div className="w-full opacity-45">© 2024 Copyright: E-Cell Nit Jamshedpur</div>
     </div>
     // </div>
   );
