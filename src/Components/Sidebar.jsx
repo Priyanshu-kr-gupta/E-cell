@@ -13,22 +13,23 @@ export default function Sidebar() {
     
       {/* Menu Icon */}
       <div
-        className="menu-icon cursor-pointer p-4 fixed z-20 right-12 top-8 space-y-2"
+        className={`menu-icon cursor-pointer p-4 fixed z-20 right-1 top-1 space-y-2 ${!menuOpen?"bg-white":"bg-black"}`}
+        
         onClick={toggleMenu}
-      >
+       style={{borderBottomLeftRadius:"50%"}}>
         <span
-          className={`block h-1  mb-1 transition-transform ease-in-out duration-200 bg-white   ${
-            menuOpen ? 'transform rotate-45 translate-y-2 w-8 bg-black ' : 'w-5 '
+          className={`block h-1  mb-1 transition-transform ease-in-out duration-200   ${
+            menuOpen ? 'transform rotate-45 translate-y-2 w-8 bg-white' : 'w-5 bg-slate-800'
           }`}
         ></span>
         <span
-          className={`block h-1 w-8 mb-1 transition-transform ease-in-out duration-200 bg-white font-bold ${
+          className={`block h-1 w-8 mb-1 transition-transform ease-in-out duration-200 bg-slate-800 font-bold ${
             menuOpen ? 'opacity-0 ' : ''
           }`}
         ></span>
         <span
-          className={`block h-1  mb-1 transition-transform ease-in-out duration-200 bg-white ${
-            menuOpen ? 'transform -rotate-45 w-8 -translate-y-2 bg-black' : 'w-5 '
+          className={`block h-1  mb-1 transition-transform ease-in-out duration-200 bg-slate-800 ${
+            menuOpen ? 'transform -rotate-45 w-8 -translate-y-2  bg-white' : 'w-5 bg-slate-800'
           }`}
         ></span>
       </div>
@@ -40,20 +41,20 @@ export default function Sidebar() {
         }`}
       >
         <div className="nav__content flex justify-center items-center h-full text-center bg-white">
-          <ul className="nav__list text-black text-3xl md:text-5xl lg:text-6xl font-light space-y-10 md:space-y-0 md:flex md:space-x-7 lg:space-x-10 tracking-wider">
-            <li className="group nav__list-item transition-all ease-in-out duration-700 hover:text-gray-600">
+          <ul className="nav__list text-black text-3xl md:text-4xl lg:text-5xl font-light space-y-10 md:space-y-0 md:flex md:space-x-7 lg:space-x-10 tracking-wider">
+            <li className="group nav__list-item transition-all ease-in-out duration-700 hover:text-gray-600 cursor-pointer">
               Home
               <span className="block w-0 group-hover:w-full h-1 bg-black transition-all duration-500 ease-in-out"></span>
             </li>
-            <li className="group nav__list-item transition-all ease-in-out duration-700 hover:text-gray-600">
+            <li className="group nav__list-item transition-all ease-in-out duration-700 hover:text-gray-600 cursor-pointer">
               About
               <span className="block w-0 group-hover:w-full h-1 bg-black transition-all duration-500 ease-in-out"></span>
             </li>
-            <li className="group nav__list-item transition-all ease-in-out duration-700 hover:text-gray-600">
+            <li className="group nav__list-item transition-all ease-in-out duration-700 hover:text-gray-600 cursor-pointer">
               Projects
               <span className="block w-0 group-hover:w-full h-1 bg-black transition-all duration-500 ease-in-out"></span>
             </li>
-            <li className="group nav__list-item transition-all ease-in-out duration-700 hover:text-gray-600">
+            <li className="group nav__list-item transition-all ease-in-out duration-700 hover:text-gray-600 cursor-pointer">
               Contact
               <span className="block w-0 group-hover:w-full h-1 bg-black transition-all duration-500 ease-in-out"></span>
             </li>
