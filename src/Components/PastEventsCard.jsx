@@ -12,29 +12,34 @@ export default function PastEventsCard({ cardData }) {
     <>
       <div style={{ backgroundColor: "#202729" }}>
         <h1 className="heading">Past Events</h1>
-        <Carousel enableAutoPlay autoPlaySpeed={6000} focusOnSelect={true}  breakPoints={breakPoints}>
+        <Carousel
+          enableAutoPlay
+          autoPlaySpeed={6000}
+          focusOnSelect={true}
+          breakPoints={breakPoints}
+        >
           {cardData.map((element) => {
             return (
               <>
                 <div className="container">
-            
-                <div className="card text-center">
-                
-                  <img
-                    className="banner-img"
-                    src={element.banner}
-                    alt="image"
+                  <div className="card text-center">
+                    <img
+                      className="banner-img"
+                      src={element.banner}
+                      alt="image"
                     />
-                  
-                 
-                  <div style={{ backgroundColor: "#253C44" }} className="cardbody">
-                    <h3 className="heading-banner">{element.name}</h3>
-                    <p className="banner-description">{element.description}</p>
-                    
-                    </div>
+
+                    <div
+                      style={{ backgroundColor: "#253C44" }}
+                      className="cardbody"
+                    >
+                      <h3 className="heading-banner">{element.name}</h3>
+                      <p className="banner-description">
+                        {element.description}
+                      </p>
                     </div>
                   </div>
-                
+                </div>
               </>
             );
           })}
