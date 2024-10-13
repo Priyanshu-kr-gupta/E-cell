@@ -1,62 +1,62 @@
 [
     {
-        "name":"dummy name",
+        "name":"dummy name 1",
         "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
+        "banner":"src/assets/event/dummybanner.jpg"
     },
     
     {
-        "name":"dummy name",
-        "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
+        "name":"dummy name 2",
+        "description":"this will give the brief description abou the event.",
+        "banner":"src/assets/event/dummybanner.jpg"
     },
 
     {
-        "name":"dummy name",
+        "name":"dummy name 3",
         "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
+        "banner":"src/assets/event/dummybanner.jpg"
     },
 
     {
-        "name":"dummy name",
+        "name":"dummy name 4",
         "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
+        "banner":"src/assets/event/dummybanner.jpg"
     },
 
     {
-        "name":"dummy name",
+        "name":"dummy name 5",
         "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
+        "banner":"src/assets/event/dummybanner.jpg"
     },
 
     {
-        "name":"dummy name",
+        "name":"dummy name 6",
         "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
+        "banner":"src/assets/event/dummybanner.jpg"
     },
 
     {
-        "name":"dummy name",
+        "name":"dummy name 7",
         "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
+        "banner":"src/assets/event/dummybanner.jpg"
     },
 
     {
-        "name":"dummy name",
+        "name":"dummy name 8",
         "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
+        "banner":"src/assets/event/dummybanner.jpg"
     },
 
     {
-        "name":"dummy name",
+        "name":"dummy name 9",
         "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
+        "banner":"src/assets/event/dummybanner.jpg"
     },
 
     {
-        "name":"dummy name",
+        "name":"dummy name 10",
         "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
+        "banner":"src/assets/event/dummybanner.jpg"
     }
 
 ]

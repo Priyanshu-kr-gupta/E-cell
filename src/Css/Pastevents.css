@@ -1,0 +1,105 @@
+.cardbody {
+    height: 95%;
+    width: 100%;
+}
+.container{
+    align-items: center;
+}
+
+.heading-banner {
+    font-size: medium;
+    font-family:Arial, Helvetica, sans-serif;
+    color:rgb(227, 204, 204);
+    font-weight: 400;
+}
+
+
+.banner-description {
+    color: gray;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+
+.card {
+
+    width: 400px;
+    height: 350px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    box-shadow: 0 4px 8px 0 rgba(202, 190, 190, 0.2);
+    transition: 0.3s;
+}
+
+@media screen and (max-width:350px) {
+    .banner-description {
+        font-size: 7px;
+    }
+
+    .card {
+        width: fit-content;
+        height: fit-content;
+
+    }
+
+    .banner-img {
+
+        width: 300px;
+        height: 200px;
+        background-color: #253C44;
+
+    }
+
+    .heading-banner {
+        font-size:medium;
+    }
+
+}
+
+@media screen and (max-width:500px) {
+    .banner-description {
+        font-size: 10px;
+    }
+
+    .card {
+        width: fit-content;
+        height: fit-content;
+
+    }
+
+
+    .heading-banner {
+        font-size:medium;
+    }
+}
+
+
+
+.card:hover {
+    box-shadow: 4px 16px 16px 4px rgba(0, 0, 0, 0.2);
+    border-color: #202729;
+    border-width: 0.5rem;
+}
+
+.banner-img {
+
+    width: 400px;
+    height: 200px;
+    background-color: #253C44;
+}
+
+.heading {
+    text-align: center;
+    color: white;
+    font-size: 7vw;
+    font-family: cursive;
+    font-weight: bolder;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+
+}
