@@ -1,7 +1,7 @@
 [
     {
         "name":"dummy name 1",
-        "description":"this will give the brief description about the event",
+        "description":"this will give the brief desctription about the event.",
         "banner":"src/assets/event/dummybanner.jpg"
     },
     

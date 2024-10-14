@@ -3,6 +3,7 @@
     width: 100%;
 }
 .container {
+    margin-top: 20%;
     align-items: center;
 }
 .heading-banner {
@@ -19,7 +20,6 @@
 }
 
 .card {
-
     width: 400px;
     height: 350px;
     margin-left: 2%;
