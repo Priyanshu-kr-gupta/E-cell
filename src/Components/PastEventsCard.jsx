@@ -3,12 +3,6 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "../Css/Pastevents.css";
 export default function PastEventsCard({ cardData }) {
-  // const breakPoints = [
-  //   { width: 1, itemsToShow: 1 },
-  //   { width: 550, itemsToShow: 1 },
-  //   { width: 700, itemsToShow: 2 },
-  //   { width: 1200, itemsToShow: 3 },
-  // ];
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -37,7 +31,6 @@ export default function PastEventsCard({ cardData }) {
       <div style={{ backgroundColor: "#202729" }}>
         <h1 className="heading">Past Events</h1>
         <Carousel
-       
           responsive={responsive}
           infinite={true}
           autoPlay={true}
@@ -74,4 +67,3 @@ export default function PastEventsCard({ cardData }) {
     </>
   );
 }
-

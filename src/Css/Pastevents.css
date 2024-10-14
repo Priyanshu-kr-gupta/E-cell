@@ -2,16 +2,19 @@
     height: 95%;
     width: 100%;
 }
+
 .container {
     margin-top: 20%;
     align-items: center;
 }
+
 .heading-banner {
     font-size: medium;
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(227, 204, 204);
     font-weight: 400;
 }
+
 .banner-description {
     color: gray;
     font-size: 14px;
@@ -39,6 +42,7 @@
         height: fit-content;
 
     }
+
     .banner-img {
         width: 300px;
         height: 200px;
@@ -49,19 +53,23 @@
         font-size: medium;
     }
 }
+
 @media screen and (max-width:500px) {
     .banner-description {
         font-size: 10px;
     }
+
     .card {
         width: fit-content;
         height: fit-content;
 
     }
+
     .heading-banner {
         font-size: medium;
     }
 }
+
 .card:hover {
     box-shadow: 4px 16px 16px 4px rgba(0, 0, 0, 0.2);
     border-color: #202729;
