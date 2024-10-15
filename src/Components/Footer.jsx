@@ -3,7 +3,7 @@ import { FaSquareFacebook } from "react-icons/fa6";
 import { FaSquareTwitter } from "react-icons/fa6";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
-import logo from "../assets/logo.png"
+import logo from "/assets/logo.png"
 export default function Footer() {
   return (
     // <div className="w-full h-[50vh]flex justify-center items-center text-white">

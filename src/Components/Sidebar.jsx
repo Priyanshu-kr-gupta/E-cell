@@ -13,7 +13,7 @@ export default function Sidebar() {
     
       {/* Menu Icon */}
       <div
-        className={`menu-icon cursor-pointer p-4 fixed z-20 right-1 top-1 space-y-2 ${!menuOpen?"bg-white":"bg-black"}`}
+        className={`menu-icon cursor-pointer p-4 fixed z-20 right-1 top-1 space-y-2 ${!menuOpen?"bg-[rgba(255,255,255,0.8)]":"bg-black"}`}
         
         onClick={toggleMenu}
        style={{borderBottomLeftRadius:"50%"}}>
@@ -47,11 +47,15 @@ export default function Sidebar() {
               <span className="block w-0 group-hover:w-full h-1 bg-black transition-all duration-500 ease-in-out"></span>
             </li>
             <li className="group nav__list-item transition-all ease-in-out duration-700 hover:text-gray-600 cursor-pointer">
-              About
+              Events
               <span className="block w-0 group-hover:w-full h-1 bg-black transition-all duration-500 ease-in-out"></span>
             </li>
             <li className="group nav__list-item transition-all ease-in-out duration-700 hover:text-gray-600 cursor-pointer">
-              Projects
+              Team
+              <span className="block w-0 group-hover:w-full h-1 bg-black transition-all duration-500 ease-in-out"></span>
+            </li>
+            <li className="group nav__list-item transition-all ease-in-out duration-700 hover:text-gray-600 cursor-pointer">
+              About
               <span className="block w-0 group-hover:w-full h-1 bg-black transition-all duration-500 ease-in-out"></span>
             </li>
             <li className="group nav__list-item transition-all ease-in-out duration-700 hover:text-gray-600 cursor-pointer">

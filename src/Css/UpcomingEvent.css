@@ -1,0 +1,8 @@
+.slider1::-webkit-scrollbar{
+height: 5px;
+background: transparent;
+}
+.slider1::-webkit-scrollbar-thumb{
+    height: 5px;
+    background: whitesmoke;
+}

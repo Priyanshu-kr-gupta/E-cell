@@ -1,61 +1,49 @@
 [
     {
         "name":"dummy name",
-        "description":"this will give the brief description about the event",
+        "description":"this will give the brief description about the event1",
         "banner":"dummybanner.jpg"
     },
     
     {
         "name":"dummy name",
-        "description":"this will give the brief description about the event",
+        "description":"this will give the brief description about the event2",
         "banner":"dummybanner.jpg"
     },
 
     {
         "name":"dummy name",
-        "description":"this will give the brief description about the event",
+        "description":"this will give the brief description about the event3",
         "banner":"dummybanner.jpg"
     },
 
     {
         "name":"dummy name",
-        "description":"this will give the brief description about the event",
+        "description":"this will give the brief description about the event4",
         "banner":"dummybanner.jpg"
     },
 
     {
         "name":"dummy name",
-        "description":"this will give the brief description about the event",
+        "description":"this will give the brief description about the event5",
         "banner":"dummybanner.jpg"
     },
 
     {
         "name":"dummy name",
-        "description":"this will give the brief description about the event",
+        "description":"this will give the brief description about the event6",
         "banner":"dummybanner.jpg"
     },
 
     {
         "name":"dummy name",
-        "description":"this will give the brief description about the event",
+        "description":"this will give the brief description about the event7",
         "banner":"dummybanner.jpg"
     },
 
     {
         "name":"dummy name",
-        "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
-    },
-
-    {
-        "name":"dummy name",
-        "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
-    },
-
-    {
-        "name":"dummy name",
-        "description":"this will give the brief description about the event",
+        "description":"this will give the brief description about the event8",
         "banner":"dummybanner.jpg"
     }
 

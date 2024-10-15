@@ -6,7 +6,7 @@ import { FaInstagramSquare } from "react-icons/fa";
 import { FaFacebookMessenger } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import logo from "../assets/logo.png"
+import logo from "/assets/logo.png"
 
 export default function Hero() {
   return (
