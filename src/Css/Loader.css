@@ -1,0 +1,40 @@
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen */
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+  }
+  
+  .letter {
+    margin: 0 5px;
+    animation: scale 1s ease-in-out infinite;
+  }
+  
+  .letter:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .letter:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .letter:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  .letter:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+  .letter:nth-child(5) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes scale {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+  }
+  
