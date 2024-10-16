@@ -2,61 +2,80 @@
     {
         "name":"dummy name",
         "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
+        "banner":"dummybanner.jpg",
+        "gallery":["dummybanner.jpg","dummybanner.jpg","dummybanner.jpg","dummybanner.jpg"]
     },
     
     {
         "name":"dummy name",
         "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
+        "banner":"dummybanner.jpg",
+        "gallery":["dummybanner.jpg","dummybanner.jpg","dummybanner.jpg","dummybanner.jpg"]
+
     },
 
     {
         "name":"dummy name",
         "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
+        "banner":"dummybanner.jpg",
+        "gallery":["dummybanner.jpg","dummybanner.jpg","dummybanner.jpg","dummybanner.jpg"]
+
     },
 
     {
         "name":"dummy name",
         "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
+        "banner":"dummybanner.jpg",
+        "gallery":["dummybanner.jpg","dummybanner.jpg","dummybanner.jpg","dummybanner.jpg"]
+
     },
 
     {
         "name":"dummy name",
         "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
+        "banner":"dummybanner.jpg",
+        "gallery":["dummybanner.jpg","dummybanner.jpg","dummybanner.jpg","dummybanner.jpg"]
+
     },
 
     {
         "name":"dummy name",
         "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
+        "banner":"dummybanner.jpg",
+        "gallery":["dummybanner.jpg","dummybanner.jpg","dummybanner.jpg","dummybanner.jpg"]
+
     },
 
     {
         "name":"dummy name",
         "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
+        "banner":"dummybanner.jpg",
+        "gallery":["dummybanner.jpg","dummybanner.jpg","dummybanner.jpg","dummybanner.jpg"]
+
     },
 
     {
         "name":"dummy name",
         "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
+        "banner":"dummybanner.jpg",
+        "gallery":["dummybanner.jpg","dummybanner.jpg","dummybanner.jpg","dummybanner.jpg"]
+
     },
 
     {
         "name":"dummy name",
         "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
+        "banner":"dummybanner.jpg",
+        "gallery":["dummybanner.jpg","dummybanner.jpg","dummybanner.jpg","dummybanner.jpg"]
+
     },
 
     {
         "name":"dummy name",
         "description":"this will give the brief description about the event",
-        "banner":"dummybanner.jpg"
+        "banner":"dummybanner.jpg",
+        "gallery":["dummybanner.jpg","dummybanner.jpg","dummybanner.jpg","dummybanner.jpg"]
+
     }
 
 ]
