@@ -1,6 +1,7 @@
 [
     {
         "name":"dummy name",
+        "intro":"i am intro of event",
         "description":"this will give the brief description about the event1",
         "banner":"dummybanner.jpg",
         "gallery":["dummybanner.jpg","dummybanner.jpg","dummybanner.jpg","dummybanner.jpg"]
@@ -9,6 +10,7 @@
     
     {
         "name":"dummy name",
+        "intro":"i am intro of event",
         "description":"this will give the brief description about the event2",
         "banner":"dummybanner.jpg",
         "gallery":["dummybanner.jpg","dummybanner.jpg","dummybanner.jpg","dummybanner.jpg"]
@@ -17,6 +19,7 @@
 
     {
         "name":"dummy name",
+        "intro":"i am intro of event",
         "description":"this will give the brief description about the event3",
         "banner":"dummybanner.jpg",
         "gallery":["dummybanner.jpg","dummybanner.jpg","dummybanner.jpg","dummybanner.jpg"]
@@ -25,6 +28,7 @@
 
     {
         "name":"dummy name",
+        "intro":"i am intro of event",
         "description":"this will give the brief description about the event4",
         "banner":"dummybanner.jpg",
         "gallery":["dummybanner.jpg","dummybanner.jpg","dummybanner.jpg","dummybanner.jpg"]
@@ -33,6 +37,7 @@
 
     {
         "name":"dummy name",
+        "intro":"i am intro of event",
         "description":"this will give the brief description about the event5",
         "banner":"dummybanner.jpg",
         "gallery":["dummybanner.jpg","dummybanner.jpg","dummybanner.jpg","dummybanner.jpg"]
@@ -41,6 +46,7 @@
 
     {
         "name":"dummy name",
+        "intro":"i am intro of event",
         "description":"this will give the brief description about the event6",
         "banner":"dummybanner.jpg",
         "gallery":["dummybanner.jpg","dummybanner.jpg","dummybanner.jpg","dummybanner.jpg"]
@@ -49,6 +55,7 @@
 
     {
         "name":"dummy name",
+        "intro":"i am intro of event",
         "description":"this will give the brief description about the event7",
         "banner":"dummybanner.jpg",
         "gallery":["dummybanner.jpg","dummybanner.jpg","dummybanner.jpg","dummybanner.jpg"]
@@ -57,6 +64,7 @@
 
     {
         "name":"dummy name",
+        "intro":"i am intro of event",
         "description":"this will give the brief description about the event8",
         "banner":"dummybanner.jpg",
         "gallery":["dummybanner.jpg","dummybanner.jpg","dummybanner.jpg","dummybanner.jpg"]

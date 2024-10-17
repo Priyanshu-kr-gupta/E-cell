@@ -34,8 +34,8 @@ export default function UpcomingEvent() {
         <div className='w-full p-5'>
           <h3 className='text-2xl font-bold'>{data[currentIndex].name}</h3><br/>
           
-          <p className='text-sm text-left'>{data[currentIndex].description}</p>
-        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5'>Visit</button>
+          <p className='text-sm text-left'>{data[currentIndex].intro}</p>
+        {/* <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5'>Visit</button> */}
         </div>
       </div>
 

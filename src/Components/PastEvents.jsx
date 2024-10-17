@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import data from "../Data/pastevent.json";
 import "../Css/UpcomingEvent.css";
-
+import { Link } from 'react-router-dom';
 export default function PastEvents() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
@@ -25,7 +25,7 @@ export default function PastEvents() {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div 
-        style={{ backgroundImage: `url(/assets/event/${data[currentIndex].banner})` }} 
+        style={{ backgroundImage: `url(/assets/event/${data[currentIndex].banner})`,backgroundSize:"cover" }} 
         className='w-[90%] h-[90%] m-[2%] mt-3 bg-cover bg-center rounded-t-lg max-[700px]:h-full'
       >
       </div>
@@ -33,8 +33,8 @@ export default function PastEvents() {
       <div className='w-full p-5'>
         <h3 className='text-2xl font-bold'>{data[currentIndex].name}</h3><br/>
         
-        <p className='text-sm text-left'>{data[currentIndex].description}</p>
-      <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5'>Visit</button>
+        <p className='text-sm text-left'>{data[currentIndex].intro}</p>
+      <Link to={`/EventGallery/${currentIndex}`}><button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5'>Gallery</button></Link>
       </div>
     </div>
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import { Link } from 'react-router-dom';
 
 export default function Sidebar() {
   const [menuOpen, setMenuOpen] = useState(false); // State to track menu open/close
@@ -43,23 +43,23 @@ export default function Sidebar() {
         <div className="nav__content flex justify-center items-center h-full text-center bg-white">
           <ul className="nav__list text-black text-3xl md:text-4xl lg:text-5xl font-light space-y-10 md:space-y-0 md:flex md:space-x-7 lg:space-x-10 tracking-wider">
             <li className="group nav__list-item transition-all ease-in-out duration-700 hover:text-gray-600 cursor-pointer">
-              Home
+              <Link to={"/"}>Home</Link>
               <span className="block w-0 group-hover:w-full h-1 bg-black transition-all duration-500 ease-in-out"></span>
             </li>
             <li className="group nav__list-item transition-all ease-in-out duration-700 hover:text-gray-600 cursor-pointer">
-              Events
+              <Link to={"/Events"}>Events</Link>
               <span className="block w-0 group-hover:w-full h-1 bg-black transition-all duration-500 ease-in-out"></span>
             </li>
             <li className="group nav__list-item transition-all ease-in-out duration-700 hover:text-gray-600 cursor-pointer">
-              Team
+              <Link to={"/Team"}>Team</Link>
               <span className="block w-0 group-hover:w-full h-1 bg-black transition-all duration-500 ease-in-out"></span>
             </li>
             <li className="group nav__list-item transition-all ease-in-out duration-700 hover:text-gray-600 cursor-pointer">
-              About
+              <Link to={"/About"}>About</Link>
               <span className="block w-0 group-hover:w-full h-1 bg-black transition-all duration-500 ease-in-out"></span>
             </li>
             <li className="group nav__list-item transition-all ease-in-out duration-700 hover:text-gray-600 cursor-pointer">
-              Contact
+              <Link to={"/Contact"}>Contact</Link>
               <span className="block w-0 group-hover:w-full h-1 bg-black transition-all duration-500 ease-in-out"></span>
             </li>
           </ul>
