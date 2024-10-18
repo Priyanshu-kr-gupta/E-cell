@@ -6,21 +6,30 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import 'swiper/css/navigation';
+import '../Css/Guestspeaker.css'
+
+
+
 
 import slide_image_1 from '../../public/assets/speaker/dummyimage.jpg';
 import slide_image_2 from '../../public/assets/speaker/dummyimage.jpg';
 import slide_image_3 from '../../public/assets/speaker/dummyimage.jpg';
 import slide_image_4 from  '../../public/assets/speaker/dummyimage.jpg';
 import slide_image_5 from  '../../public/assets/speaker/dummyimage.jpg';
-import slide_image_6 from '../../public/assets/speaker/dummyimage.jpg';
+import slide_image_6 from  '../../public/assets/speaker/dummyimage.jpg';
 import slide_image_7 from  '../../public/assets/speaker/dummyimage.jpg';
+import slide_image_8 from  '../../public/assets/speaker/dummyimage.jpg';
+
+
+
 
 export default function Guestspeaker() {
   return (
-    <div className="max-w-[124rem] bg-[#202729] mx-auto">
+    <div className="container">
 
-      <h1 className="text-white text-3xl text-center mb-8">
-        Our - Speakers
+      <h1 className="heading">
+        Guest-Speakers
       </h1>
       <Swiper
         effect={'coverflow'}
@@ -41,27 +50,84 @@ export default function Guestspeaker() {
           clickable: true,
         }}
         modules={[EffectCoverflow, Pagination, Navigation]}
-        className="relative h-[48.5rem] py-4"
+        className="swiper_container"
       >
-        {[slide_image_1, slide_image_2, slide_image_3, slide_image_4, slide_image_5, slide_image_6, slide_image_7].map((image, index) => (
-          <SwiperSlide key={index} className="flex flex-col justify-center items-center bg-[#253C44] rounded-2xl shadow-lg w-[30rem] h-[41rem]">
-            <img src={image} alt={`slide_image_${index + 1}`} className="w-[30rem] h-[35rem] mt-[-3rem] rounded-2xl object-cover" />
-            <h3 className="text-white pt-4">Lorem ipsum-{index + 1}</h3>
-            <p className="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </SwiperSlide>
-        ))}
+        <SwiperSlide>
+          <img src={slide_image_1} alt="slide_image" />
+          <h3 className="nameofSpeaker">
+            Lorem ipsum-1
+          </h3>
+          <p className="aboutofSpeaker" >Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide_image_2} alt="slide_image" />
+          <h3 className="nameofSpeaker">
+            Lorem ipsum-2
+          </h3>
+          <p className="aboutofSpeaker" >Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 
-        <div className="slider-controler flex justify-center items-center relative bottom-8">
-          <div className="swiper-button-prev bg-white w-14 h-14 rounded-full shadow-md flex justify-center items-center cursor-pointer">
-            <ion-icon name="arrow-back-outline" className="text-2xl text-[#222224]"></ion-icon>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide_image_3} alt="slide_image" />
+          <h3 className="nameofSpeaker">
+            Lorem ipsum-3
+          </h3>
+          <p className="aboutofSpeaker" >Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide_image_4} alt="slide_image" />
+          <h3 className="nameofSpeaker">
+            Lorem ipsum-4
+          </h3>
+          <p className="aboutofSpeaker" >Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide_image_5} alt="slide_image" />
+          <h3 className="nameofSpeaker">
+            Lorem ipsum-5
+          </h3>
+          <p className="aboutofSpeaker" >Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide_image_6} alt="slide_image" />
+          <h3 className="nameofSpeaker">
+            Lorem ipsum-6
+          </h3>
+          <p className="aboutofSpeaker" >Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide_image_7} alt="slide_image" />
+          <h3 className="nameofSpeaker">
+            Lorem ipsum-7
+          </h3>
+          <p className="aboutofSpeaker" >Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slide_image_8} alt="slide_image" />
+          <h3 className="nameofSpeaker">
+            Lorem ipsum-8
+          </h3>
+          <p className="aboutofSpeaker" >Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+        </SwiperSlide>
+
+        <div className="slider-controler">
+          <div className="swiper-button-prev slider-arrow">
+            <ion-icon name="arrow-back-outline"></ion-icon>
           </div>
-          <div className="swiper-button-next bg-white w-14 h-14 rounded-full shadow-md flex justify-center items-center cursor-pointer">
-            <ion-icon name="arrow-forward-outline" className="text-2xl text-[#222224]"></ion-icon>
+          <div className="swiper-button-next slider-arrow">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
           </div>
-          <div className="swiper-pagination w-[15rem]"></div>
+          <div className="swiper-pagination"></div>
         </div>
+
       </Swiper>
 
     </div>
-  );
+  )
 }
