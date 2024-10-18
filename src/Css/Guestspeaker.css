@@ -65,6 +65,10 @@ max-width: 124rem;
 }
 
 @media (max-width: 500px) {
+
+  .container {
+  zoom: .6;
+  }
   .swiper_container {
     height: 43rem;
   }
