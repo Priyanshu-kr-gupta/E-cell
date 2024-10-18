@@ -1,0 +1,52 @@
+{
+    "faculty": [
+      {
+        "name": "divyanshu",
+        "linkedin": "abc",
+        "designation": "faculty",
+        "image": "dummyimage.jpg"
+      }
+    ],
+    "Web": [
+      {
+        "name": "abhay",
+        "linkedin": "abc",
+        "designation": "web",
+        "image": "dummyimage.jpg"
+      }
+    ],
+    "Operations": [
+        {
+          "name": "abhay",
+          "linkedin": "abc",
+          "designation": "web",
+          "image": "dummyimage.jpg"
+        }
+      ],
+    "PR": [
+        {
+          "name": "abhay",
+          "linkedin": "abc",
+          "designation": "web",
+          "image": "dummyimage.jpg"
+        }
+      ],
+    "Creative": [
+        {
+          "name": "abhay",
+          "linkedin": "abc",
+          "designation": "web",
+          "image": "dummyimage.jpg"
+        }
+      ],
+    "Corporate": [
+        {
+          "name": "abhay",
+          "linkedin": "abc",
+          "designation": "web",
+          "image": "dummyimage.jpg"
+        }
+      ]
+    
+  }
+  
