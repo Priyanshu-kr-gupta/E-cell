@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 export default function EventGallery() {
   const { index } = useParams();
   const event = data[index];
+  console.log(event);
   const [currentImage, setCurrentImage] = useState(0);
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const imagesPerPage = 6;

@@ -7,7 +7,6 @@ export default function PastEvents() {
   const [isHovered, setIsHovered] = useState(false);
   useEffect(() => {
     let sliderInterval;
-    
     if (!isHovered) {
       sliderInterval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
