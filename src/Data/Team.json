@@ -1,52 +1,108 @@
 {
-    "faculty": [
-      {
-        "name": "divyanshu",
-        "linkedin": "abc",
-        "designation": "faculty",
-        "image": "dummyimage.jpg"
-      }
-    ],
-    "Web": [
-      {
-        "name": "abhay",
-        "linkedin": "abc",
-        "designation": "web",
-        "image": "dummyimage.jpg"
-      }
-    ],
-    "Operations": [
-        {
-          "name": "abhay",
-          "linkedin": "abc",
-          "designation": "web",
-          "image": "dummyimage.jpg"
-        }
-      ],
-    "PR": [
-        {
-          "name": "abhay",
-          "linkedin": "abc",
-          "designation": "web",
-          "image": "dummyimage.jpg"
-        }
-      ],
-    "Creative": [
-        {
-          "name": "abhay",
-          "linkedin": "abc",
-          "designation": "web",
-          "image": "dummyimage.jpg"
-        }
-      ],
-    "Corporate": [
-        {
-          "name": "abhay",
-          "linkedin": "abc",
-          "designation": "web",
-          "image": "dummyimage.jpg"
-        }
-      ]
-    
-  }
-  
+  "leadership": [
+    {
+      "name": "John Doe",
+      "position": "President",
+      "department": "General",
+      "image": "dummyimage.jpg"
+    },
+    {
+      "name": "Jane Doe",
+      "position": "Vice President",
+      "department": "General",
+      "image": "dummyimage.jpg"
+    },
+    {
+      "name": "Bob Smith",
+      "position": "General Secretary",
+      "department": "General",
+      "image": "dummyimage.jpg"
+    }
+  ],
+  "web": [
+    {
+      "name": "Alice Johnson",
+      "position": "Web Developer",
+      "image": "dummyimage.jpg"
+    },
+    {
+      "name": "Kevin White",
+      "position": "Web Designer",
+      "image": "dummyimage.jpg"
+    },
+    {
+      "name": "Emily Patel",
+      "position": "Web Developer",
+      "image": "dummyimage.jpg"
+    }
+  ],
+  "crn": [
+    {
+      "name": "Mike Brown",
+      "position": "CRN Specialist",
+      "image": "dummyimage.jpg"
+    },
+    {
+      "name": "Lisa Nguyen",
+      "position": "CRN Coordinator",
+      "image": "dummyimage.jpg"
+    },
+    {
+      "name": "David Lee",
+      "position": "CRN Manager",
+      "image": "dummyimage.jpg"
+    }
+  ],
+  "pr": [
+    {
+      "name": "Emily Chen",
+      "position": "PR Manager",
+      "image": "dummyimage.jpg"
+    },
+    {
+      "name": "Tom Harris",
+      "position": "PR Coordinator",
+      "image": "dummyimage.jpg"
+    },
+    {
+      "name": "Sarah Taylor",
+      "position": "PR Specialist",
+      "image": "dummyimage.jpg"
+    }
+  ],
+  "creative": [
+    {
+      "name": "David Lee",
+      "position": "Creative Director",
+      "image": "dummyimage.jpg"
+    },
+    {
+      "name": "Jessica Martin",
+      "position": "Graphic Designer",
+      "image": "dummyimage.jpg"
+    },
+    {
+      "name": "James Davis",
+      "position": "Creative Specialist",
+      "image": "dummyimage.jpg"
+    }
+  ],
+  "operations": [
+    {
+      "name": "Sarah Taylor",
+      "position": "Operations Manager",
+      "image": "dummyimage.jpg"
+    },
+    {
+      "name": "James Davis",
+      "position": "Operations Coordinator",
+      "image": "dummyimage.jpg"
+    },
+    {
+      "name": "Emily Patel",
+      "position": "Operations Specialist",
+      "image": "dummyimage.jpg"
+    }
+  ]
+}
+
