@@ -9,7 +9,7 @@
     },
     
     {
-        "name":"Corporate Rodies",
+        "name":"CorporateRodies",
         "intro":"Corporate Roadies is a case study submission event organised by NIT Jamshedpur E-CELL",
         "description":"Corporate Roadies is a case study submission event organised by E-Cell NIT Jamshedpur. The event aims to provide a platform for students to solve diverse real-world problems. The participants are required to have a clear problem understanding, solving, clarity, and presentation skills to ace the competition.It consist of two round Round 1: Problem Pitching and Case Submission Round 2:Final Presentation",
         "banner":"team.webp",
@@ -37,11 +37,11 @@
     },
 
     {
-        "name":"Teenprenuers",
+        "name":"TeenPrenures",
         "intro":"Teenpreneur is a 2-day entrepreneurial bootcamp for school students. Teenpreneur is a unique platform that aims to inculcate entrepreneurial skills",
         "description":"Teenpreneur is a 2-day entrepreneurial bootcamp for school students. Teenpreneur is a unique platform that aims to inculcate entrepreneurial skills and mindset among school students. The event is designed to provide a comprehensive learning experience to its participants, where they can learn from industry experts, ideate, innovate, and create their own startup ideas. The event also provides a platform for students to showcase their talents and creativity, and to learn from their peers. The event is open to school students of classes 9th to 12th.",
         "banner":"img2.webp",
-        "gallery":[" img1.webp","img2.webp","img3.webp","img4.webp","img5.webp","img6.webp","img7.webp","img8.webp","img9.webp"]
+        "gallery":["img1.webp","img2.webp","img3.webp","img4.webp","img5.webp","img6.webp","img7.webp","img8.webp","img9.webp"]
 
     }
 ]

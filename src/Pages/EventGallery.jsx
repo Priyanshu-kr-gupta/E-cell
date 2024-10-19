@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 export default function EventGallery() {
   const { index } = useParams();
   const event = data[index];
+  console.log(event);
   const [currentImage, setCurrentImage] = useState(0);
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const imagesPerPage = 6;
@@ -35,7 +36,7 @@ export default function EventGallery() {
       
       {/* Hero Section */}
       <div className="w-full h-[60vh] bg-cover bg-center relative flex items-center justify-center text-center" 
-           style={{ backgroundImage: `url(/assets/event/${event.banner})` }}>
+           style={{ backgroundImage: `url(/assets/event/${event.name}/${event.banner})` }}>
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
         <div className="relative z-10">
           <h1 className="text-7xl font-bold mb-6">{event.name}</h1>
@@ -54,7 +55,7 @@ export default function EventGallery() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-[90%] sm:w-[85%] lg:w-[80%]">
           {event.gallery.slice((currentPage - 1) * imagesPerPage, currentPage * imagesPerPage).map((image, index) => (
             <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer" onClick={() => handleImageClick((currentPage - 1) * imagesPerPage + index)}>
-              <img src={`/assets/event/${image}`} alt={event.name} 
+              <img src={`/assets/event/${event.name}/${image}`} alt={event.name} 
                    className="w-full h-[300px] object-cover transition-transform duration-300 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <h3 className="text-2xl font-bold">View Image</h3>
