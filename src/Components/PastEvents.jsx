@@ -25,7 +25,7 @@ export default function PastEvents() {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div 
-        style={{ backgroundImage: `url(/assets/event/${data[currentIndex].banner})`,backgroundSize:"cover" }} 
+        style={{ backgroundImage: `url(/assets/event/${data[currentIndex].name}/${data[currentIndex].banner})`,backgroundSize:"cover" }} 
         className='w-[90%] h-[90%] m-[2%] mt-3 bg-cover bg-center rounded-t-lg max-[700px]:h-full'
       >
       </div>
@@ -43,16 +43,16 @@ export default function PastEvents() {
 
         {data.map((info, index) => (
           <div 
-            key={index} 
-            className={`w-[80px] h-[80px] flex-shrink-0 ${currentIndex === index ? 'border-4 border-yellow-500' : ''}`}>
+          key={index} 
+          className={`w-[80px] h-[80px] flex-shrink-0 ${currentIndex === index ? 'border-4 border-yellow-500' : ''}`}>
             <img 
-              src={`/assets/event/${info.banner}`} 
+              src={`/assets/event/${info.name}/${info.banner}`} 
               alt="notfound" 
               className='cursor-pointer w-full h-full object-cover' 
               onClick={() => setCurrentIndex(index)} 
               onMouseEnter={() => setIsHovered(true)} 
               onMouseLeave={() => setIsHovered(false)}
-            />
+              />
           </div>
         ))}
 

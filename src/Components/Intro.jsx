@@ -1,5 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import { motion} from 'framer-motion';
+import logo from "/assets/logo.png"
+
 export default function () {
   const [text, setText] = useState('');
   const [index, setIndex] = useState(0);
@@ -28,6 +30,9 @@ export default function () {
   return (
     <>
     <div style={{ height: "100vh"}} className='flex justify-center  flex-col items-center bg-zinc-800 relative' >
+      
+      <img src={logo} alt="" className="w-[150px]"/>
+      
       <motion.div className='w-full h-[50%] flex justify-center  text-white font-semibold lg:text-[6rem] md:text-[5rem] text-[4rem] text-left drop-shadow-[0_0_100px_skyblue] absolute top-0'
         initial={{ opacity: 0}}
         whileInView={{ opacity: 1 }} 

@@ -33,11 +33,11 @@ export default function Event() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-[90%] sm:w-[85%] lg:w-[80%]">
           {items.map((info, index) => (
             <Link key={index} to={`/EventGallery/${i + index}`} className="group relative overflow-hidden rounded-lg shadow-lg">
-              <img src={`/assets/event/${info.banner}`} alt={info.name} 
+              <img src={`/assets/event/${info.name}/${info.banner}`} alt={info.name} 
                    className="w-full h-[300px] object-cover transition-transform duration-300 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col gap-5 items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <h3 className="text-2xl font-bold">{info.name}</h3>
-                <h2>{info.intro}</h2>
+                <h2 className='text-center'>{info.intro}</h2>
               </div>
             </Link>
           ))}

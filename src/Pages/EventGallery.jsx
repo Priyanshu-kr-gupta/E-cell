@@ -35,10 +35,12 @@ export default function EventGallery() {
       
       {/* Hero Section */}
       <div className="w-full h-[60vh] bg-cover bg-center relative flex items-center justify-center text-center" 
-           style={{ backgroundImage: `url(/assets/event/${event.banner})` }}>
+           style={{ backgroundImage: `url(/assets/event/${event.name}/${event.banner})` }}>
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-        <div className="relative z-10">
-          <h1 className="text-7xl font-bold mb-6">{event.name}</h1>
+        <div className="relative z-10 w-full flex justify-center">
+          <h1 className="text-7xl font-bold mb-6  w-[90%] break-words">{event.name}</h1>
+          
+
         </div>
       </div>
       
@@ -54,7 +56,7 @@ export default function EventGallery() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-[90%] sm:w-[85%] lg:w-[80%]">
           {event.gallery.slice((currentPage - 1) * imagesPerPage, currentPage * imagesPerPage).map((image, index) => (
             <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer" onClick={() => handleImageClick((currentPage - 1) * imagesPerPage + index)}>
-              <img src={`/assets/event/${image}`} alt={event.name} 
+              <img src={`/assets/event/${event.name}/${image}`} alt={event.name} 
                    className="w-full h-[300px] object-cover transition-transform duration-300 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <h3 className="text-2xl font-bold">View Image</h3>
@@ -63,22 +65,6 @@ export default function EventGallery() {
           ))}
         </div>
       </div>
-      
-
-
-      {/* <div className="flex justify-center mb-10">
-        {currentPage > 1 && (
-          <button className="bg-[#2f4f4f] text-white px-8 py-3 rounded-md hover:bg-[#1c3b3b] transition mr-4" onClick={handlePrevPage}>
-            Prev
-          </button>
-        )}
-        {Math.ceil(event.gallery.length / imagesPerPage) > currentPage && (
-          <button className="bg-[#2f4f4f] text-white px-8 py-3 rounded-md hover:bg-[#1c3b3b] transition" onClick={handleNextPage}>
-            Next
-          </button>
-        )}
-      </div> */}
-
 
 
       <div className="flex justify-center mb-10">
@@ -98,7 +84,7 @@ export default function EventGallery() {
           <button className="absolute top-1/2 left-0 text-white text-5xl cursor-pointer" onClick={handlePrevImage}>
             &#8592;
           </button>
-          <img src={`/assets/event/${event.gallery[currentImage]}`} alt={event.name} 
+          <img src={`/assets/event/${event.name}/${event.gallery[currentImage]}`} alt={event.name} 
                className="max-w-full max-h-full object-contain" />
                 <button className="absolute top-1/2 right-0 text-white text-5xl cursor-pointer" onClick={handleNextImage}>
             &#8594;
