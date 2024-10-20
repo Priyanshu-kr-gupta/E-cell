@@ -45,7 +45,7 @@ export default function Event() {
         </motion.div>
       </div>
 
-      <div className="w-full h-auto min-h-[100vh] flex items-center justify-center">
+      <div className="w-full h-auto py-10 min-h-[100vh] flex items-center justify-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-[90%] sm:w-[85%] lg:w-[80%]">
           <motion.div
             className="bg-[#2f4f4f] p-10 rounded-xl aspect-[1/1.2]"

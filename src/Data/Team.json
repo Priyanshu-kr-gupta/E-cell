@@ -15,7 +15,39 @@
   "image": "faculty2.jpg",
   "email": "jane.smith@example.com",
   "linkedin": "(link unavailable)"
-  }
+  },
+  {
+    "id": 1,
+    "name": "John Doe",
+    "designation": "Professor",
+    "image": "faculty1.jpg",
+    "email": "john.doe@example.com",
+    "linkedin": "(link unavailable)"
+    },
+    {
+    "id": 2,
+    "name": "Jane Smith",
+    "designation": "Associate Professor",
+    "image": "faculty2.jpg",
+    "email": "jane.smith@example.com",
+    "linkedin": "(link unavailable)"
+    },
+    {
+      "id": 1,
+      "name": "John Doe",
+      "designation": "Professor",
+      "image": "faculty1.jpg",
+      "email": "john.doe@example.com",
+      "linkedin": "(link unavailable)"
+      },
+      {
+      "id": 2,
+      "name": "Jane Smith",
+      "designation": "Associate Professor",
+      "image": "faculty2.jpg",
+      "email": "jane.smith@example.com",
+      "linkedin": "(link unavailable)"
+      }
   ],
   "Web": [
   {
