@@ -11,11 +11,6 @@ export default function Event() {
     setCurrentPage(pageNumber);
   };
 
-<<<<<<< HEAD
-  
-
-=======
->>>>>>> parent of bf96431 (Merge pull request #12 from ayushkumarsingh2422005/main)
   const j = currentPage * itemsPerPage;
   const i = j - itemsPerPage;
   const items = data.slice(i, j);
