@@ -225,7 +225,7 @@ export default function Event() {
                   <li>
                     {" "}
                     <FaArrowRight className="fs-icons" size={"1rem"} />
-                    <span>Creative</span>
+                    <span> Creative</span>
                   </li>
                   <li>
                     {" "}
