@@ -3,6 +3,8 @@ import { FaSquareFacebook } from "react-icons/fa6";
 import { FaSquareTwitter } from "react-icons/fa6";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
+import {FaPhone, FaEnvelope } from "react-icons/fa";
+
 import logo from "/assets/logo.png"
 export default function Footer() {
   return (

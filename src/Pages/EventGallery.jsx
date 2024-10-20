@@ -99,7 +99,7 @@ export default function EventGallery() {
           <button className="absolute top-1/2 left-0 text-white text-5xl cursor-pointer" onClick={handlePrevImage}>
             &#8592;
           </button>
-          <img src={`/assets/event/${event.gallery[currentImage]}`} alt={event.name} 
+          <img src={`/assets/event/${event.name}/${event.gallery[currentImage]}`} alt={event.name} 
                className="max-w-full max-h-full object-contain" />
                 <button className="absolute top-1/2 right-0 text-white text-5xl cursor-pointer" onClick={handleNextImage}>
             &#8594;

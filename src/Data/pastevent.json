@@ -20,9 +20,8 @@
         "name":"IdeaHackathon",
         "intro":"Idea Hackathon is a 24 hour online event where participants have to come up with innovative solutions to the problems given and then present it infront of the judges",
         "description":"Idea Hackathon is a 24 hour online event where participants have to come up with innovative solutions to the problems given and then present it infront of the judges. The event is organised by E-Cell NIT Jamshedpur. The participants are required to have a clear problem understanding, solving, clarity, and presentation skills to ace the competition. The event is a great way to learn from the experiences of the judges and the other participants.  The event is a great way to make new friends and connections. The event is a great way to have fun",
-
         "banner":"img9.webp",
-        "gallery":["img1.webp , img2.webp , img3.webp , img4.webp , img5.webp , img6.webp , img7.webp , img8.webp , img9.webp"]
+        "gallery":["img1.webp", "img2.webp" , "img3.webp" , "img4.webp" , "img5.webp" , "img6.webp" , "img7.webp" , "img8.webp" , "img9.webp"]
 
     },
 
