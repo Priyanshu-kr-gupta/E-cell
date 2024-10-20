@@ -1,0 +1,39 @@
+.teamCard {
+    overflow: hidden;
+  }
+  
+  .teamHero {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: all ease 0.2s;
+  }
+  
+  .teamCard:hover .teamHero {
+    transform: scale(1.2);
+    left: -25%;
+  }
+  
+  .teamInfo {
+    transition: all ease 0.2s;
+    height: 30%;
+  }
+  
+  .teamCard:hover .teamInfo {
+    height: 50%;
+  }
+  
+  .teamInfoVisible {
+    opacity: 1;
+  }
+   .teamInfoHidden {
+    opacity: 0;
+  }
+  .teamCard:hover .teamInfoHidden {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    transition-delay: 0.2s;
+  }
+  
+ 
+  
