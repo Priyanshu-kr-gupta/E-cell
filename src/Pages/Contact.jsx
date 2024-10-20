@@ -1,5 +1,9 @@
 import React from "react";
 import "../Css/Contact.css";
+import { FaSquareFacebook } from "react-icons/fa6";
+import { FaSquareTwitter } from "react-icons/fa6";
+import { FaSquareInstagram } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
 export default function Contact() {
   return (
     <>
@@ -9,7 +13,22 @@ export default function Contact() {
             <h1 className="text-white p-10 text-4xl sm:text-6xl md:text-6xl lg:text-7xl m-5">
               Get in Touch with us!
             </h1>
-            <div className="card p-1 lg:p-5 md:p-4 sm:p-3">
+            <div className="card p-1 lg:p-5 md:p-4 sm:p-3 ">
+              <div className="w-full flex justify-center gap-5 mb-10 ">
+
+            <a href="https://www.facebook.com/entrepreneurship.cell.nit.jsr/" className="icons text-white hover:text-blue-500" target="_blank">
+                  <FaSquareFacebook />
+                </a>
+                <a href="https://x.com/ecell_nitjsr/" className="icons text-white hover:text-gray-400" target="_blank">
+                  <FaSquareTwitter />
+                </a>
+                <a href="https://www.instagram.com/ecell.nitjsr/" className="icons text-white  hover:text-pink-500" target="_blank">
+                  <FaSquareInstagram />
+                </a>
+                <a href="https://www.linkedin.com/company/e-cell-nit-jamshedpur1234/posts/?feedView=all" className="icons text-white  hover:text-blue-500" target="_blank"> 
+                  <FaLinkedin />
+                </a>
+                      </div>
               <div class="flex-container">
                 <div class="flex-item-left">
                   <p id="flex-item-left-p">
