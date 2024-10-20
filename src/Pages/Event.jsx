@@ -45,6 +45,7 @@ export default function Event() {
       
       <div className="w-full py-16 flex justify-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-[90%] sm:w-[85%] lg:w-[80%]">
+
           {items.map((info, index) => {
             const imageIndex = i + index; // Calculate the actual index of the image in the array
 
