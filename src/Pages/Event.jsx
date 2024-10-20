@@ -7,29 +7,16 @@ export default function Event() {
   const itemsPerPage = 6;
   const totalPages = Math.ceil(data.length / itemsPerPage);
 
-  // State to track loading status of each image
-  const [imageLoaded, setImageLoaded] = useState([]);
-
-  useEffect(() => {
-    setImageLoaded(new Array(data.length).fill(false)); // Initialize the loader state for all images
-  }, []);
-
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
-  const handleImageLoad = (index) => {
-    setImageLoaded((prev) => {
-      const updatedArray = [...prev];
-      updatedArray[index] = true; // Mark image as loaded
-      return updatedArray;
-    });
-  };
+  
 
   const j = currentPage * itemsPerPage;
   const i = j - itemsPerPage;
   const items = data.slice(i, j);
-
+  
   return (
     <div className="w-full flex flex-col items-center bg-gradient-to-b from-[#1f1f1f] to-[#303633] text-white min-h-screen">
       
