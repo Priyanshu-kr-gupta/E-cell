@@ -1,3 +1,19 @@
+.teamConatiner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.teamSection{
+  height: 100%;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+.teamSection button{
+  width: 100px;
+}
 .teamCard {
     overflow: hidden;
   }
@@ -20,7 +36,7 @@
   }
   
   .teamCard:hover .teamInfo {
-    height: 50%;
+    height: 55%;
   }
   
   .teamInfoVisible {
@@ -36,4 +52,19 @@
   }
   
  
-  
+  @media (max-width:900px) {
+    .teamConatiner{
+      flex-direction: column-reverse;
+    }
+    .teamSection{
+      width: 100%;
+      flex-direction: row;
+      gap:0px;
+      margin: 10px;
+    }
+    .teamSection button{
+      width: auto;
+      padding: 8px;
+      border: 1px solid black;
+    }
+  }

@@ -6,8 +6,10 @@ export default function Contact() {
       <div className="background">
         <div className="bimg">
           <div className="card">
-            <h1 className="heading-get">Get in Touch with us!</h1>
-            <div className="cardc">
+            <h1 className="text-white p-10 text-4xl sm:text-6xl md:text-6xl lg:text-7xl m-5">
+              Get in Touch with us!
+            </h1>
+            <div className="card p-1 lg:p-5 md:p-4 sm:p-3">
               <div class="flex-container">
                 <div class="flex-item-left">
                   <p id="flex-item-left-p">
