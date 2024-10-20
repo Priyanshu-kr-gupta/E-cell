@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import data from "../Data/pastevent.json";
 import { Link } from 'react-router-dom';
@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 export default function EventGallery() {
   const { index } = useParams();
   const event = data[index];
-  console.log(event);
   const [currentImage, setCurrentImage] = useState(0);
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const imagesPerPage = 6;
@@ -14,7 +13,14 @@ export default function EventGallery() {
   const totalPage = Math.ceil(data[index].gallery.length / imagesPerPage);
 
   // State to track loading status of each image
-  const [imageLoaded, setImageLoaded] = useState({});
+  const [imageLoaded, setImageLoaded] = useState([]);
+
+  // Initialize the imageLoaded state array with false for all images
+  useEffect(() => {
+    if (event && event.gallery.length) {
+      setImageLoaded(new Array(event.gallery.length).fill(false));
+    }
+  }, [event]);
 
   const handleImageClick = (index) => {
     setCurrentImage(index);
@@ -34,7 +40,11 @@ export default function EventGallery() {
   };
 
   const handleImageLoad = (index) => {
-    setImageLoaded((prev) => ({ ...prev, [index]: true }));
+    setImageLoaded((prev) => {
+      const updatedArray = [...prev];
+      updatedArray[index] = true;  // Set the loader to false once the image is loaded
+      return updatedArray;
+    });
   };
 
   if (!event) return <div>Event not found</div>;
@@ -61,30 +71,33 @@ export default function EventGallery() {
       {/* Gallery Section */}
       <div className="w-full py-16 flex justify-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-[90%] sm:w-[85%] lg:w-[80%]">
-          {event.gallery.slice((currentPage - 1) * imagesPerPage, currentPage * imagesPerPage).map((image, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer" onClick={() => handleImageClick((currentPage - 1) * imagesPerPage + index)}>
-              
-              {/* Spinner (shown until the image is loaded) */}
-              {!imageLoaded[(currentPage - 1) * imagesPerPage + index] && (
-                <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
-                  <div className="w-12 h-12 border-4 border-t-4 border-t-blue-500 border-gray-300 rounded-full animate-spin"></div>
+          {event.gallery.slice((currentPage - 1) * imagesPerPage, currentPage * imagesPerPage).map((image, index) => {
+            const imageIndex = (currentPage - 1) * imagesPerPage + index;
+            return (
+              <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer" onClick={() => handleImageClick(imageIndex)}>
+                
+                {/* Spinner (shown until the image is loaded) */}
+                {!imageLoaded[imageIndex] && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
+                    <div className="w-12 h-12 border-4 border-t-4 border-t-blue-500 border-gray-300 rounded-full animate-spin"></div>
+                  </div>
+                )}
+
+                {/* Image */}
+                <img 
+                  src={`/assets/event/${event.name}/${image}`} 
+                  alt={event.name} 
+                  className={`w-full h-[300px] object-cover transition-transform duration-300 group-hover:scale-110 ${!imageLoaded[imageIndex] ? 'hidden' : 'block'}`} 
+                  loading="lazy"  // Lazy loading for images
+                  onLoad={() => handleImageLoad(imageIndex)}
+                />
+
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className="text-2xl font-bold">View Image</h3>
                 </div>
-              )}
-
-              {/* Image */}
-              <img 
-                src={`/assets/event/${event.name}/${image}`} 
-                alt={event.name} 
-                className={`w-full h-[300px] object-cover transition-transform duration-300 group-hover:scale-110 ${!imageLoaded[(currentPage - 1) * imagesPerPage + index] ? 'hidden' : 'block'}`} 
-                loading="lazy"  // Lazy loading for images
-                onLoad={() => handleImageLoad((currentPage - 1) * imagesPerPage + index)}
-              />
-
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-2xl font-bold">View Image</h3>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
