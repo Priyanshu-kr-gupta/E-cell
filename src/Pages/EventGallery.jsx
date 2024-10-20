@@ -11,7 +11,11 @@ export default function EventGallery() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const imagesPerPage = 6;
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPage=Math.ceil(data[index].gallery.length/imagesPerPage);
+  const totalPage = Math.ceil(data[index].gallery.length / imagesPerPage);
+
+  // State to track loading status of each image
+  const [imageLoaded, setImageLoaded] = useState({});
+
   const handleImageClick = (index) => {
     setCurrentImage(index);
     setIsGalleryOpen(true);
@@ -29,6 +33,10 @@ export default function EventGallery() {
     setIsGalleryOpen(false);
   };
 
+  const handleImageLoad = (index) => {
+    setImageLoaded((prev) => ({ ...prev, [index]: true }));
+  };
+
   if (!event) return <div>Event not found</div>;
 
   return (
@@ -40,8 +48,6 @@ export default function EventGallery() {
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
         <div className="relative z-10 w-full flex justify-center">
           <h1 className="text-7xl font-bold mb-6  w-[90%] break-words">{event.name}</h1>
-          
-
         </div>
       </div>
       
@@ -57,8 +63,23 @@ export default function EventGallery() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-[90%] sm:w-[85%] lg:w-[80%]">
           {event.gallery.slice((currentPage - 1) * imagesPerPage, currentPage * imagesPerPage).map((image, index) => (
             <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer" onClick={() => handleImageClick((currentPage - 1) * imagesPerPage + index)}>
-              <img src={`/assets/event/${event.name}/${image}`} alt={event.name} 
-                   className="w-full h-[300px] object-cover transition-transform duration-300 group-hover:scale-110" />
+              
+              {/* Spinner (shown until the image is loaded) */}
+              {!imageLoaded[(currentPage - 1) * imagesPerPage + index] && (
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
+                  <div className="w-12 h-12 border-4 border-t-4 border-t-blue-500 border-gray-300 rounded-full animate-spin"></div>
+                </div>
+              )}
+
+              {/* Image */}
+              <img 
+                src={`/assets/event/${event.name}/${image}`} 
+                alt={event.name} 
+                className={`w-full h-[300px] object-cover transition-transform duration-300 group-hover:scale-110 ${!imageLoaded[(currentPage - 1) * imagesPerPage + index] ? 'hidden' : 'block'}`} 
+                loading="lazy"  // Lazy loading for images
+                onLoad={() => handleImageLoad((currentPage - 1) * imagesPerPage + index)}
+              />
+
               <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <h3 className="text-2xl font-bold">View Image</h3>
               </div>
@@ -67,27 +88,31 @@ export default function EventGallery() {
         </div>
       </div>
 
-
+      {/* Pagination for Gallery */}
       <div className="flex justify-center mb-10">
-      {
-        Array(totalPage).fill().map((_,index)=>{
-          return(
-            <button key={index+1} className={`px-4 py-2 mx-2 rounded-md ${currentPage === index+1?'bg-[#1c3b3b] text-white' : 'bg-[#2f4f4f] text-gray-300'}`} onClick={()=>{setCurrentPage(index+1)}}>{index+1}</button>
-          )
-        })
-      }
+        {Array(totalPage).fill().map((_, index) => (
+          <button
+            key={index + 1}
+            className={`px-4 py-2 mx-2 rounded-md ${currentPage === index + 1 ? 'bg-[#1c3b3b] text-white' : 'bg-[#2f4f4f] text-gray-300'}`}
+            onClick={() => setCurrentPage(index + 1)}
+          >
+            {index + 1}
+          </button>
+        ))}
       </div>
 
-
-
+      {/* Image Modal */}
       {isGalleryOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center overflow-hidden z-50">
           <button className="absolute top-1/2 left-0 text-white text-5xl cursor-pointer" onClick={handlePrevImage}>
             &#8592;
           </button>
-          <img src={`/assets/event/${event.name}/${event.gallery[currentImage]}`} alt={event.name} 
-               className="max-w-full max-h-full object-contain" />
-                <button className="absolute top-1/2 right-0 text-white text-5xl cursor-pointer" onClick={handleNextImage}>
+          <img 
+            src={`/assets/event/${event.name}/${event.gallery[currentImage]}`} 
+            alt={event.name} 
+            className="max-w-full max-h-full object-contain" 
+          />
+          <button className="absolute top-1/2 right-0 text-white text-5xl cursor-pointer" onClick={handleNextImage}>
             &#8594;
           </button>
           <button className="absolute top-0 right-0 text-white text-3xl cursor-pointer" onClick={handleCloseGallery}>
@@ -96,17 +121,16 @@ export default function EventGallery() {
         </div>
       )}
 
-
-  <div className="w-full bg-[#1c3b3b] py-12 flex flex-col items-center">
+      {/* Explore More Events */}
+      <div className="w-full bg-[#1c3b3b] py-12 flex flex-col items-center">
         <h2 className="text-5xl font-bold mb-6 text-center">Explore More Events</h2>
         <p className="text-lg font-medium mb-10 w-[70%] text-center">Want to relive more moments? View our entire collection of past events.</p>
-        <Link to={'/events'}><button className="bg-[#2f4f4f] text-white px-8 py-3 rounded-md hover:bg-[#1c3b3b] transition"> 
-        See All Past Events 
-        </button>
+        <Link to={'/events'}>
+          <button className="bg-[#2f4f4f] text-white px-8 py-3 rounded-md hover:bg-[#1c3b3b] transition">
+            See All Past Events
+          </button>
         </Link>
       </div>
-      
     </div>
   );
 }
-

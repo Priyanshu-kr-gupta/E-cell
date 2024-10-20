@@ -14,6 +14,7 @@ export default function Event() {
   const j = currentPage * itemsPerPage;
   const i = j - itemsPerPage;
   const items = data.slice(i, j);
+  console.log(items);
 
   return (
     <div className="w-full flex flex-col items-center bg-gradient-to-b from-[#1f1f1f] to-[#303633] text-white min-h-screen">
