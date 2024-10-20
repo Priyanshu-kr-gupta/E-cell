@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import data from "../Data/pastevent.json";
 
@@ -7,14 +7,28 @@ export default function Event() {
   const itemsPerPage = 6;
   const totalPages = Math.ceil(data.length / itemsPerPage);
 
+  // State to track loading status of each image
+  const [imageLoaded, setImageLoaded] = useState([]);
+
+  useEffect(() => {
+    setImageLoaded(new Array(data.length).fill(false)); // Initialize the loader state for all images
+  }, []);
+
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
+  };
+
+  const handleImageLoad = (index) => {
+    setImageLoaded((prev) => {
+      const updatedArray = [...prev];
+      updatedArray[index] = true; // Mark image as loaded
+      return updatedArray;
+    });
   };
 
   const j = currentPage * itemsPerPage;
   const i = j - itemsPerPage;
   const items = data.slice(i, j);
-  console.log(items);
 
   return (
     <div className="w-full flex flex-col items-center bg-gradient-to-b from-[#1f1f1f] to-[#303633] text-white min-h-screen">
@@ -26,22 +40,39 @@ export default function Event() {
         <div className="relative z-10">
           <h1 className="text-7xl font-bold mb-6">Our Past Events</h1>
           <p className="text-lg font-medium mb-10">Relive the moments, explore the excitement</p>
-        
         </div>
       </div>
       
       <div className="w-full py-16 flex justify-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-[90%] sm:w-[85%] lg:w-[80%]">
-          {items.map((info, index) => (
-            <Link key={index} to={`/EventGallery/${i + index}`} className="group relative overflow-hidden rounded-lg shadow-lg">
-              <img src={`/assets/event/${info.name}/${info.banner}`} alt={info.name} 
-                   className="w-full h-[300px] object-cover transition-transform duration-300 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col gap-5 items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-2xl font-bold">{info.name}</h3>
-                <h2 className='text-center'>{info.intro}</h2>
-              </div>
-            </Link>
-          ))}
+          {items.map((info, index) => {
+            const imageIndex = i + index; // Calculate the actual index of the image in the array
+
+            return (
+              <Link key={index} to={`/EventGallery/${imageIndex}`} className="group relative overflow-hidden rounded-lg shadow-lg">
+                
+                {/* Spinner (shown until the image is loaded) */}
+                {!imageLoaded[imageIndex] && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
+                    <div className="w-12 h-12 border-4 border-t-4 border-t-blue-500 border-gray-300 rounded-full animate-spin"></div>
+                  </div>
+                )}
+
+                {/* Image */}
+                <img 
+                  src={`/assets/event/${info.name}/${info.banner}`} 
+                  alt={info.name} 
+                  className={`w-full h-[300px] object-cover transition-transform duration-300 group-hover:scale-110 ${!imageLoaded[imageIndex] ? 'hidden' : 'block'}`} 
+                  onLoad={() => handleImageLoad(imageIndex)} // Image load handler
+                />
+
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col gap-5 items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className="text-2xl font-bold">{info.name}</h3>
+                  <h2 className='text-center'>{info.intro}</h2>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
       
@@ -57,16 +88,12 @@ export default function Event() {
       <div className="w-full bg-[#1c3b3b] py-12 flex flex-col items-center">
         <h2 className="text-5xl font-bold mb-6 text-center">Excited for More?</h2>
         <p className="text-lg font-medium mb-10 w-[70%] text-center">Stay tuned for our upcoming events where you can be part of something exciting and create memories just like these.</p>
-        <Link to={'#'}><button className="bg-[#2f4f4f] text-white px-8 py-3 rounded-md hover:bg-[#1c3b3b] transition"> 
-          View Upcoming Events 
-        </button>
+        <Link to={'#'}>
+          <button className="bg-[#2f4f4f] text-white px-8 py-3 rounded-md hover:bg-[#1c3b3b] transition"> 
+            View Upcoming Events 
+          </button>
         </Link>
       </div>
-      
-   
-      
     </div>
   );
 }
-
-
