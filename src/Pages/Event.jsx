@@ -14,7 +14,7 @@ export default function Event() {
   const j = currentPage * itemsPerPage;
   const i = j - itemsPerPage;
   const items = data.slice(i, j);
-
+  
   return (
     <div className="w-full flex flex-col items-center bg-gradient-to-b from-[#1f1f1f] to-[#303633] text-white min-h-screen">
       
@@ -32,14 +32,16 @@ export default function Event() {
       <div className="w-full py-16 flex justify-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-[90%] sm:w-[85%] lg:w-[80%]">
           {items.map((info, index) => (
-            <Link key={index} to={`/EventGallery/${i + index}`} className="group relative overflow-hidden rounded-lg shadow-lg">
-              <img src={`/assets/event/${info.name}/${info.banner}`} alt={info.name} 
-                   className="w-full h-[300px] object-cover transition-transform duration-300 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col gap-5 items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-2xl font-bold">{info.name}</h3>
-                <h2 className='text-center'>{info.intro}</h2>
-              </div>
-            </Link>
+      <Link key={index} to={`/EventGallery/${i + index}`} className="group relative overflow-hidden rounded-lg shadow-lg">
+      <img src={`/assets/event/${info.name}/${info.banner}`} alt={info.name} className="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-110" />
+      <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 flex flex-col items-center justify-center py-4 transition-all duration-500 group-hover:h-48">
+        <h3 className="text-2xl font-bold">{info.name}</h3>
+        <h2 className='text-center text-sm hidden group-hover:block'>{info.intro}</h2>
+      </div>
+    </Link>
+    
+       
+       
           ))}
         </div>
       </div>

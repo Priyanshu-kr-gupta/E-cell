@@ -1,108 +1,142 @@
 {
-  "leadership": [
+  "Faculty": [
+  {
+  "id": 1,
+  "name": "John Doe",
+  "designation": "Professor",
+  "image": "faculty1.jpg",
+  "email": "john.doe@example.com",
+  "linkedin": "(link unavailable)"
+  },
+  {
+  "id": 2,
+  "name": "Jane Smith",
+  "designation": "Associate Professor",
+  "image": "faculty2.jpg",
+  "email": "jane.smith@example.com",
+  "linkedin": "(link unavailable)"
+  },
+  {
+    "id": 1,
+    "name": "John Doe",
+    "designation": "Professor",
+    "image": "faculty1.jpg",
+    "email": "john.doe@example.com",
+    "linkedin": "(link unavailable)"
+    },
     {
+    "id": 2,
+    "name": "Jane Smith",
+    "designation": "Associate Professor",
+    "image": "faculty2.jpg",
+    "email": "jane.smith@example.com",
+    "linkedin": "(link unavailable)"
+    },
+    {
+      "id": 1,
       "name": "John Doe",
-      "position": "President",
-      "department": "General",
-      "image": "dummyimage.jpg"
-    },
-    {
-      "name": "Jane Doe",
-      "position": "Vice President",
-      "department": "General",
-      "image": "dummyimage.jpg"
-    },
-    {
-      "name": "Bob Smith",
-      "position": "General Secretary",
-      "department": "General",
-      "image": "dummyimage.jpg"
-    }
+      "designation": "Professor",
+      "image": "faculty1.jpg",
+      "email": "john.doe@example.com",
+      "linkedin": "(link unavailable)"
+      },
+      {
+      "id": 2,
+      "name": "Jane Smith",
+      "designation": "Associate Professor",
+      "image": "faculty2.jpg",
+      "email": "jane.smith@example.com",
+      "linkedin": "(link unavailable)"
+      }
   ],
-  "web": [
-    {
-      "name": "Alice Johnson",
-      "position": "Web Developer",
-      "image": "dummyimage.jpg"
-    },
-    {
-      "name": "Kevin White",
-      "position": "Web Designer",
-      "image": "dummyimage.jpg"
-    },
-    {
-      "name": "Emily Patel",
-      "position": "Web Developer",
-      "image": "dummyimage.jpg"
-    }
+  "Web": [
+  {
+  "id": 1,
+  "name": "Bob Johnson",
+  "designation": "Web Developer",
+  "image": "web1.jpg",
+  "email": "bob.johnson@example.com",
+  "linkedin": "(link unavailable)"
+  },
+  {
+  "id": 2,
+  "name": "Alice Brown",
+  "designation": "UI/UX Designer",
+  "image": "web2.jpg",
+  "email": "alice.brown@example.com",
+  "linkedin": "(link unavailable)"
+  }
   ],
-  "crn": [
-    {
-      "name": "Mike Brown",
-      "position": "CRN Specialist",
-      "image": "dummyimage.jpg"
-    },
-    {
-      "name": "Lisa Nguyen",
-      "position": "CRN Coordinator",
-      "image": "dummyimage.jpg"
-    },
-    {
-      "name": "David Lee",
-      "position": "CRN Manager",
-      "image": "dummyimage.jpg"
-    }
+  "Crn": [
+  {
+  "id": 1,
+  "name": "Mike Davis",
+  "designation": "Core Team Member",
+  "image": "crn1.jpg",
+  "email": "mike.davis@example.com",
+  "linkedin": "(link unavailable)"
+  },
+  {
+  "id": 2,
+  "name": "Emily Chen",
+  "designation": "Core Team Member",
+  "image": "crn2.jpg",
+  "email": "emily.chen@example.com",
+  "linkedin": "(link unavailable)"
+  }
   ],
-  "pr": [
-    {
-      "name": "Emily Chen",
-      "position": "PR Manager",
-      "image": "dummyimage.jpg"
-    },
-    {
-      "name": "Tom Harris",
-      "position": "PR Coordinator",
-      "image": "dummyimage.jpg"
-    },
-    {
-      "name": "Sarah Taylor",
-      "position": "PR Specialist",
-      "image": "dummyimage.jpg"
-    }
+  "Pr": [
+  {
+  "id": 1,
+  "name": "Sarah Lee",
+  "designation": "Public Relations",
+  "image": "pr1.jpg",
+  "email": "sarah.lee@example.com",
+  "linkedin": "(link unavailable)"
+  },
+  {
+  "id": 2,
+  "name": "David Kim",
+  "designation": "Public Relations",
+  "image": "pr2.jpg",
+  "email": "david.kim@example.com",
+  "linkedin": "(link unavailable)"
+  }
   ],
-  "creative": [
-    {
-      "name": "David Lee",
-      "position": "Creative Director",
-      "image": "dummyimage.jpg"
-    },
-    {
-      "name": "Jessica Martin",
-      "position": "Graphic Designer",
-      "image": "dummyimage.jpg"
-    },
-    {
-      "name": "James Davis",
-      "position": "Creative Specialist",
-      "image": "dummyimage.jpg"
-    }
+  "Corporate": [
+  {
+  "id": 1,
+  "name": "Kevin White",
+  "designation": "Corporate Partner",
+  "image": "corporate1.jpg",
+  "email": "kevin.white@example.com",
+  "linkedin": "(link unavailable)"
+  },
+  {
+  "id": 2,
+  "name": "Olivia Patel",
+  "designation": "Corporate Partner",
+  "image": "corporate2.jpg",
+  "email": "olivia.patel@example.com",
+  "linkedin": "(link unavailable)"
+  }
   ],
-  "operations": [
-    {
-      "name": "Sarah Taylor",
-      "position": "Operations Manager",
-      "image": "dummyimage.jpg"
-    },
-    {
-      "name": "James Davis",
-      "position": "Operations Coordinator",
-      "image": "dummyimage.jpg"
-    },
-    {
-      "name": "Emily Patel",
-      "position": "Operations Specialist",
-      "image": "dummyimage.jpg"
-    }
+  "Lead": [
+  {
+  "id": 1,
+  "name": "Google",
+  "designation": "Gold Sponsor",
+  "image": "google.jpg",
+  "email": "google@example.com",
+  "linkedin": "(link unavailable)"
+  },
+  {
+  "id": 2,
+  "name": "Microsoft",
+  "designation": "Silver Sponsor",
+  "image": "microsoft.jpg",
+  "email": "microsoft@example.com",
+  "linkedin": "(link unavailable)"
+  }
   ]
-}
-
+  }
