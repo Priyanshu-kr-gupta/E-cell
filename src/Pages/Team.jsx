@@ -10,13 +10,13 @@ export default function Team() {
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-b from-[#1f1f1f] to-[#303633] text-white pt-10 ">
-      <div className="">
+      <div>
         <h1 className="text-[15vw] md:text-[10vw] sm:text-[12vw] font-bold font-serif leading-tight pl-2 md:pl-6pl-2 lg:pl-10 md:pl-6">MEET</h1>
         <h1 className="text-[15vw] md:text-[10vw] sm:text-[12vw] font-bold font-serif leading-tight flex items-center pl-2 lg:pl-10 md:pl-6">THE TEAM 
           <div className="animate-ping text-[10vw] md:text-[8vw] sm:text-[6vw] lg:text-[6vw] pl-1">|</div> 
         </h1>
       </div>
-      <div className="w-full h-auto flex teamConatiner">
+      <div className="w-full h-auto min-h-[80vh] flex teamConatiner">
         <div className="teamSection flex flex-wrap gap-2 justify-center lg:flex-nowrap">
           {["Faculty","Lead", "Web", "Crn", "Pr", "Corporate"].map((section, index) => (
             <button 
@@ -53,6 +53,13 @@ export default function Team() {
             ))}
           </div>
         </div>
+      </div>
+      <div>
+        <h1 className="text-[15vw] md:text-[10vw] sm:text-[12vw] font-bold font-serif leading-tight pr-2  lg:pr-10 md:pr-6 text-right mt-10">OUR</h1>
+        <h1 className="text-[15vw] md:text-[10vw] sm:text-[12vw] font-bold font-serif leading-tight pr-2  lg:pr-10 md:pr-6 text-right">SPONSERS</h1>
+      </div>
+      <div className="w-full h-auto p-10 flex flex-wrap">
+
       </div>
     </div>
   );
