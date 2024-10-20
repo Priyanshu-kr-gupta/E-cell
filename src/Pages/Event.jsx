@@ -37,7 +37,7 @@ export default function Event() {
                    className="w-full h-[300px] object-cover transition-transform duration-300 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col gap-5 items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <h3 className="text-2xl font-bold">{info.name}</h3>
-                <h2>{info.intro}</h2>
+                <h2 className='text-center'>{info.intro}</h2>
               </div>
             </Link>
           ))}

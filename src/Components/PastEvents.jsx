@@ -42,8 +42,8 @@ export default function PastEvents() {
 
         {data.map((info, index) => (
           <div 
-            key={index} 
-            className={`w-[80px] h-[80px] flex-shrink-0 ${currentIndex === index ? 'border-4 border-yellow-500' : ''}`}>
+          key={index} 
+          className={`w-[80px] h-[80px] flex-shrink-0 ${currentIndex === index ? 'border-4 border-yellow-500' : ''}`}>
             <img 
               src={`/assets/event/${info.name}/${info.banner}`} 
               alt="notfound" 
@@ -51,7 +51,7 @@ export default function PastEvents() {
               onClick={() => setCurrentIndex(index)} 
               onMouseEnter={() => setIsHovered(true)} 
               onMouseLeave={() => setIsHovered(false)}
-            />
+              />
           </div>
         ))}
 

@@ -38,8 +38,10 @@ export default function EventGallery() {
       <div className="w-full h-[60vh] bg-cover bg-center relative flex items-center justify-center text-center" 
            style={{ backgroundImage: `url(/assets/event/${event.name}/${event.banner})` }}>
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-        <div className="relative z-10">
-          <h1 className="text-7xl font-bold mb-6">{event.name}</h1>
+        <div className="relative z-10 w-full flex justify-center">
+          <h1 className="text-7xl font-bold mb-6  w-[90%] break-words">{event.name}</h1>
+          
+
         </div>
       </div>
       
@@ -64,22 +66,6 @@ export default function EventGallery() {
           ))}
         </div>
       </div>
-      
-
-
-      {/* <div className="flex justify-center mb-10">
-        {currentPage > 1 && (
-          <button className="bg-[#2f4f4f] text-white px-8 py-3 rounded-md hover:bg-[#1c3b3b] transition mr-4" onClick={handlePrevPage}>
-            Prev
-          </button>
-        )}
-        {Math.ceil(event.gallery.length / imagesPerPage) > currentPage && (
-          <button className="bg-[#2f4f4f] text-white px-8 py-3 rounded-md hover:bg-[#1c3b3b] transition" onClick={handleNextPage}>
-            Next
-          </button>
-        )}
-      </div> */}
-
 
 
       <div className="flex justify-center mb-10">
