@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import data from "../Data/pastevent.json";
 import { Link } from 'react-router-dom';
-
+import "../Css/ImageLoader.css"
 export default function EventGallery() {
   const { index } = useParams();
   const event = data[index];
-  console.log(event);
   const [currentImage, setCurrentImage] = useState(0);
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const imagesPerPage = 6;
@@ -56,13 +55,29 @@ export default function EventGallery() {
       <div className="w-full py-16 flex justify-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-[90%] sm:w-[85%] lg:w-[80%]">
           {event.gallery.slice((currentPage - 1) * imagesPerPage, currentPage * imagesPerPage).map((image, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer" onClick={() => handleImageClick((currentPage - 1) * imagesPerPage + index)}>
-              <img src={`/assets/event/${event.name}/${image}`} alt={event.name} 
-                   className="w-full h-[300px] object-cover transition-transform duration-300 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-2xl font-bold">View Image</h3>
-              </div>
-            </div>
+         <div 
+         key={index} 
+         className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
+         onClick={() => handleImageClick((currentPage - 1) * imagesPerPage + index)}
+       >
+         <div className="relative w-full h-[300px]">
+         <div className={`loader loader-${index}`}></div>
+
+           <img 
+             src={`/assets/event/${event.name}/${image}`} 
+             alt={event.name} 
+             className="w-full h-[300px] object-cover transition-transform duration-300 group-hover:scale-110 absolute top-0"
+             onLoad={() => {
+               document.querySelector(`.loader-${index}`).style.display = 'none';
+             }}
+           />
+         </div>
+         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+           <h3 className="text-2xl font-bold">View Image</h3>
+         </div>
+       </div>
+       
+          
           ))}
         </div>
       </div>

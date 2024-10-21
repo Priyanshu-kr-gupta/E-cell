@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import data from "../Data/pastevent.json";
+import "../Css/ImageLoader.css"
 
 export default function Event() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -33,12 +34,24 @@ export default function Event() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-[90%] sm:w-[85%] lg:w-[80%]">
           {items.map((info, index) => (
       <Link key={index} to={`/EventGallery/${i + index}`} className="group relative overflow-hidden rounded-lg shadow-lg">
-      <img src={`/assets/event/${info.name}/${info.banner}`} alt={info.name} className="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-110" />
+      
+      <div className="w-full h-[300px] relative">
+      <div className={`loader loader-${index}`}></div>
+        <img 
+          src={`/assets/event/${info.name}/${info.banner}`} 
+          alt={info.name} 
+          className="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-110 absolute top-0"
+          onLoad={() => {
+            document.querySelector(`.loader-${index}`).style.display = 'none';
+          }}
+        />
+      </div>
       <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 flex flex-col items-center justify-center py-4 transition-all duration-500 group-hover:h-48">
         <h3 className="text-2xl font-bold">{info.name}</h3>
         <h2 className='text-center text-sm hidden group-hover:block'>{info.intro}</h2>
       </div>
     </Link>
+    
     
        
        
