@@ -6,7 +6,6 @@ import "../Css/ImageLoader.css"
 export default function EventGallery() {
   const { index } = useParams();
   const event = data[index];
-  console.log(event);
   const [currentImage, setCurrentImage] = useState(0);
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const imagesPerPage = 6;
@@ -69,7 +68,7 @@ export default function EventGallery() {
              alt={event.name} 
              className="w-full h-[300px] object-cover transition-transform duration-300 group-hover:scale-110 absolute top-0"
              onLoad={() => {
-               document.querySelector(`.loader.${index}`).style.display = 'none';
+               document.querySelector(`.loader-${index}`).style.display = 'none';
              }}
            />
          </div>
