@@ -152,12 +152,11 @@ export default function Event() {
         </motion.div>
       </div>
 
-      <div className="w-full h-auto flex items-center justify-center">
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-10 w-[90%] sm:w-[85%] lg:w-[80%]">
-          <div className=" p-10 rounded-xl aspect-[1/1.2]">
+      <div className="w-full  h-auto min-h-[80vh] py-10 flex items-center justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 w-[90%] sm:w-[85%] lg:w-[80%]">
+          <div className=" p-10 rounded-xl aspect-[1/1]">
             <div className="SVG_animates">
               <svg
-                style={{ backgroundColor: "white" }}
                 viewBox="0 0 631 374"
                 xmlns="http://www.w3.org/2000/svg"
               >
