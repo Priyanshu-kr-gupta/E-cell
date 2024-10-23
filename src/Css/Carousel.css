@@ -1,8 +1,7 @@
 .carousel-container {
     position: relative;
     width: 100%;
-    max-width: 1200px;
-    margin: auto;
+    max-width: 1400px;
     overflow: hidden;
     padding-top: 50px;
   }
@@ -61,12 +60,12 @@
   }
   
   .carousel-item.prev {
-    transform: translateX(-350px) scale(0.85) rotateY(25deg); /* More space for desktop */
+    transform: translateX(-400px) scale(0.85) rotateY(35deg); /* More space for desktop */
     opacity: 0.6;
   }
   
   .carousel-item.next {
-    transform: translateX(350px) scale(0.85) rotateY(-25deg); /* More space for desktop */
+    transform: translateX(400px) scale(0.85) rotateY(-35deg); /* More space for desktop */
     opacity: 0.6;
   }
   
@@ -102,7 +101,7 @@
   @media (max-width: 768px) {
     .carousel-item {
       width: 350px;
-      height: 300px;
+      height: 450px;
     }
   
     .carousel {
@@ -121,7 +120,8 @@
     }
   
     .carousel {
-      height: 300px;
+      height: 600px;
+      
     }
   
     .carousel-button {
