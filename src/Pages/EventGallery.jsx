@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import data from "../Data/pastevent.json";
 import { Link } from 'react-router-dom';
-// import "../Css/ImageLoader.css"
+import "../Css/ImageLoader.css"
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
@@ -63,13 +63,12 @@ export default function EventGallery() {
          className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
          onClick={() => handleImageClick((currentPage - 1) * imagesPerPage + index)}
        >
-         <div className="relative w-full h-[300px] flex justify-center item">
-
+         <div className="relative w-full h-[300px] loading">
            <LazyLoadImage
              src={`/assets/event/${event.name}/${image}`} 
              alt={event.name} 
             effect="blur"
-             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+             className="w-[400px] h-[300px] z-10 block object-cover transition-transform duration-300 group-hover:scale-110"
            />
      
          </div>
