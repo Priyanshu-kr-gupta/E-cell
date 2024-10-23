@@ -1,0 +1,131 @@
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding-top: 50px;
+  }
+  
+  .carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 500px;
+    perspective: 1500px; /* Stronger 3D perspective for desktop */
+  }
+  
+  .carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Align items to the bottom */
+    flex-direction: column; /* Stack image and text */
+    width: 300px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    position: absolute;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    color: white; /* Set text color */
+    text-align: center; /* Center text */
+    padding: 30px; /* Add padding for the text */
+  }
+  
+  .carousel-content {
+    position: absolute;
+    bottom: 0; /* Position content at the bottom */
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.858); /* Black background with 60% opacity */
+    padding: 10px; /* Padding for the content */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+    z-index: 10; /* Ensure text is above the image */
+  }
+  
+  .carousel-item.active .carousel-content {
+    opacity: 1; /* Show text when active */
+
+  }
+  
+  .carousel-name {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .carousel-intro {
+    font-size: 1rem;
+    margin-top: 5px; /* Add some space between name and intro */
+  }
+  
+  .carousel-item.prev {
+    transform: translateX(-350px) scale(0.85) rotateY(25deg); /* More space for desktop */
+    opacity: 0.6;
+  }
+  
+  .carousel-item.next {
+    transform: translateX(350px) scale(0.85) rotateY(-25deg); /* More space for desktop */
+    opacity: 0.6;
+  }
+  
+  .carousel-item.active {
+    transform: translateX(0) scale(1) rotateY(0deg);
+    opacity: 1;
+    z-index: 5;
+    width: 350px;
+  }
+  
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: rgb(248, 248, 248);
+    cursor: pointer;
+    z-index: 100;
+    transition: transform 0.2s;
+  }
+  
+  .carousel-button.prev {
+    left: 20px;
+  }
+  
+  .carousel-button.next {
+    right: 20px;
+  }
+  
+  /* Media Queries for responsiveness */
+  @media (max-width: 768px) {
+    .carousel-item {
+      width: 350px;
+      height: 300px;
+    }
+  
+    .carousel {
+      height: 400px;
+    }
+  
+    .carousel-button {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .carousel-item {
+      width: 200px;
+      height: 250px;
+    }
+  
+    .carousel {
+      height: 300px;
+    }
+  
+    .carousel-button {
+      font-size: 1.8rem;
+    }
+  }
+  

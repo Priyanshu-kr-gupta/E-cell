@@ -1,4 +1,4 @@
-[
+ [
     {
         "name":"Shikhar Goel",
         "intro":"CTO of GeeksforGeeks and an alumnus of IIT Kanpur, Shikhar Goel is a well-established name in the industry. He has been the driving force behind the popular online platform, GeeksforGeeks, and has been instrumental in shaping the tech industry.",
@@ -46,7 +46,6 @@
         "intro":"this will give the brief intro about the speaker",
         "image":"atul.webp"
     },
-
     {
         "name":"Mr. Shubham Khanna",
         "intro":"irector of T.I.M.E, JamshedpurAn alumnus of XLRI with outstanding achievements, including 99+%ile in CAT and XATSenior Brand Manager at CIPLA",
@@ -66,3 +65,4 @@
 
 
 ]
+

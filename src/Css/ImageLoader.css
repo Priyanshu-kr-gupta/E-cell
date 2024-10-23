@@ -1,10 +1,10 @@
-.loader {
+ .loader {
    
     background-color: #f7f7f7;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    background: #e0e0e0; /* Base skeleton background color */
+    background: #e0e0e0; 
   }
   
   .loader::before {
@@ -26,4 +26,7 @@
       transform: translateX(150%);
     }
   }
-  
+   
+
+
+   
