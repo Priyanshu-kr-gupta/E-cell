@@ -1,32 +1,14 @@
- .loader {
-   
-    background-color: #f7f7f7;
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-    background: #e0e0e0; 
-  }
-  
-  .loader::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 150%;
-    height: 100%;
-    background: linear-gradient(90deg, #e0e0e0, #f7f7f7, #e0e0e0);
-    animation: skeleton-loading 1.5s infinite ease-in-out;
-  }
-  
-  @keyframes skeleton-loading {
-    0% {
-      transform: translateX(-150%);
+.loading {
+  background: whitesmoke;
+  animation: animate 2s linear infinite alternate;
     }
-    100% {
-      transform: translateX(150%);
+
+    @keyframes animate {
+      from{
+        background: whitesmoke;
+      }
+      to{
+        background: rgba(172, 172, 172, 0.644);
+        
+      }
     }
-  }
-   
-
-
-   
