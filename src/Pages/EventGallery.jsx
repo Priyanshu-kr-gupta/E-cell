@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import data from "../Data/pastevent.json";
 import { Link } from 'react-router-dom';
 import "../Css/ImageLoader.css"
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
 export default function EventGallery() {
   const { index } = useParams();
   const event = data[index];
@@ -60,17 +63,14 @@ export default function EventGallery() {
          className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
          onClick={() => handleImageClick((currentPage - 1) * imagesPerPage + index)}
        >
-         <div className="relative w-full h-[300px]">
-         <div className={`loader loader-${index}`}></div>
-
-           <img 
+         <div className="relative w-full h-[300px] loading">
+           <LazyLoadImage
              src={`/assets/event/${event.name}/${image}`} 
              alt={event.name} 
-             className="w-full h-[300px] object-cover transition-transform duration-300 group-hover:scale-110 absolute top-0"
-             onLoad={() => {
-               document.querySelector(`.loader-${index}`).style.display = 'none';
-             }}
+            effect="blur"
+             className="w-[400px] h-[300px] z-10 block object-cover transition-transform duration-300 group-hover:scale-110"
            />
+     
          </div>
          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
            <h3 className="text-2xl font-bold">View Image</h3>

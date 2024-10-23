@@ -17,7 +17,11 @@
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
     "react-image-gallery": "^1.3.0",
+<<<<<<< HEAD
     "react-responsive-3d-carousel": "^1.5.0",
+=======
+    "react-lazy-load-image-component": "^1.6.2",
+>>>>>>> fa6b942de6dcc004c4fe57a3b801124d124b2d6e
     "react-router-dom": "^6.27.0"
   },
   "devDependencies": {

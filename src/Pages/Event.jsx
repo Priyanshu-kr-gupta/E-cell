@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import data from "../Data/pastevent.json";
 import "../Css/ImageLoader.css"
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 export default function Event() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -35,15 +37,12 @@ export default function Event() {
           {items.map((info, index) => (
       <Link key={index} to={`/EventGallery/${i + index}`} className="group relative overflow-hidden rounded-lg shadow-lg">
       
-      <div className="w-full h-[300px] relative">
-      <div className={`loader loader-${index}`}></div>
-        <img 
+      <div className="relative w-full h-[300px] loading">
+        <LazyLoadImage
           src={`/assets/event/${info.name}/${info.banner}`} 
           alt={info.name} 
-          className="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-110 absolute top-0"
-          onLoad={() => {
-            document.querySelector(`.loader-${index}`).style.display = 'none';
-          }}
+          effect="blur"
+          className="w-[400px] h-[300px] z-10 block object-cover transition-transform duration-300 group-hover:scale-110"
         />
       </div>
       <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 flex flex-col items-center justify-center py-4 transition-all duration-500 group-hover:h-48">
