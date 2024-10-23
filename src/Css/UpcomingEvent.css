@@ -4,5 +4,5 @@ background: transparent;
 }
 .slider1::-webkit-scrollbar-thumb{
     height: 5px;
-    background: whitesmoke;
+    background: rgba(245, 245, 245, 0.75);
 }

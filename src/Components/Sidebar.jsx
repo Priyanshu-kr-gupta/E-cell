@@ -7,6 +7,7 @@ export default function Sidebar() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen); // Toggle the menu state
   };
+  
 
   return (
     <div className={` transition-all ease-in-out duration-700 ${menuOpen ? ' h-screen  ' : ''}`}>

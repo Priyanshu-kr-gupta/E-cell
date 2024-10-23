@@ -27,11 +27,23 @@ export default function Hero() {
       
       <div className='absolute text-white z-10 lg:bottom-10 lg:left-10 md:bottom-7 md:left-7 sm:bottom-4 sm:left-4 bottom-2 left-2   flex flex-col gap-5'>
         <div className='text-center text-[50px] '>|</div>
-       <FaLinkedin className='text-[28px] hover:text-blue-400 cursor-pointer'/>
-       <FaInstagramSquare className='text-[28px] hover:text-pink-500 cursor-pointer'/>
-       <FaFacebookMessenger className='text-[28px] hover:text-blue-400 cursor-pointer'/>
-       <FaYoutube className='text-[28px] hover:text-red-500 cursor-pointer'/>
-       <FaSquareXTwitter className='text-[28px] hover:text-blue-400 cursor-pointer'/>
+        <a href="https://www.linkedin.com/company/e-cell-nit-jamshedpur1234/posts/?feedView=all" className="icons" target="_blank">
+                  <FaLinkedin className='text-[28px] hover:text-blue-400 cursor-pointer'/>
+        </a>
+        <a href="https://www.instagram.com/ecell.nitjsr/" className="icons" target="_blank">
+                  <FaInstagramSquare className='text-[28px] hover:text-pink-500 cursor-pointer'/>
+        </a>
+        <a href="https://www.facebook.com/entrepreneurship.cell.nit.jsr/" className="icons" target="_blank">
+                  <FaFacebookMessenger className='text-[28px] hover:text-blue-400 cursor-pointer'/>
+        </a>
+        <a href="https://www.facebook.com/entrepreneurship.cell.nit.jsr/" className="icons" target="_blank">
+                  <FaYoutube className='text-[28px] hover:text-red-500 cursor-pointer'/>
+        </a>
+        <a href="https://x.com/ecell_nitjsr/" className="icons" target="_blank">
+                  <FaSquareXTwitter className='text-[28px] hover:text-blue-400 cursor-pointer'/>
+        </a>
+       
+       
       </div>
       </motion.div>
 

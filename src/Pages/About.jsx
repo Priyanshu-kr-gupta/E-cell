@@ -114,11 +114,18 @@ export default function Event() {
         </div>
       </div>
 
-      <div className="w-full bg-[#1c3b3b] py-12 flex flex-col items-center gap-10 ">
+      <div className="w-full bg-[#2f4f4f] py-12 flex flex-col items-center gap-10 ">
         <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-6 text-center my-4">
-          E-Cell Gallery: Rediscover Our Moments
+          Founding Team
         </h2>
-
+        <div className="w-full flex justify-center">
+          {/* <div className="w-full h-full flex flex-col items-start pl-10 gap-2">
+          <p>Co Founder and General Secretary (Internal Affairs):	Dushyant Chaudhary</p>
+<p>Co Founder and Gen Sec (External Affairs) :	Paresh Vishnu</p>
+<p>Co Founder and Joint Secretary :	Rajat Singh</p>
+<p>Joint Secretary :	anwir Hassan</p>
+<p>Co Founder :	Akshat Mittal</p>
+          </div> */}
         <motion.div
           className="mx-5 lg:mx-0 relative"
           style={{
@@ -133,23 +140,28 @@ export default function Event() {
           }}
           animate={
             teamView
-              ? {
-                  opacity: 1,
-                  scale: 1,
-                }
-              : {}
+            ? {
+              opacity: 1,
+              scale: 1,
+            }
+            : {}
           }
           transition={{
             type: "spring",
             stiffness: 100,
             damping: 20,
           }}
-        >
+          >
           <img
             src={`/assets/about/team.webp`}
             className="w-full max-w-[800px] object-cover rounded-md"
-          />
+            />
         </motion.div>
+
+            </div>
+
+        
+
       </div>
 
       <div className="w-full  h-auto min-h-[80vh] py-10 flex items-center justify-center">

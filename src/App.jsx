@@ -5,12 +5,18 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Event from './Pages/Event';
 import Home from './Pages/Home';
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes , useLocation } from "react-router-dom";
 import Team from './Pages/Team';
 import EventGallery from './Pages/EventGallery';
+import { useEffect } from 'react';
 
 function App() {
+  const { pathname } = useLocation();
 
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+    
+  }, [pathname]);
   return (
     <>
     <Sidebar/>
