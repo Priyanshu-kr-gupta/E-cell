@@ -2,59 +2,69 @@
     {
         "name":"Shikhar Goel",
         "intro":"CTO of GeeksforGeeks and an alumnus of IIT Kanpur, Shikhar Goel is a well-established name in the industry. He has been the driving force behind the popular online platform, GeeksforGeeks, and has been instrumental in shaping the tech industry.",
-        "image":"sikhargoel.webp"
+        "image":"sikhargoel.webp",
+        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
     },
     
     {
         "name":"Nachiket Bhatia",
         "intro":"Nachiket Bhatia is a young and dynamic entrepreneur who has made a name for himself in the world of business. He has been the founder of multiple startups and has been instrumental in shaping the entrepreneurial ecosystem in India. He has been a speaker at multiple events and has been featured in various media outlets.",
-        "image":"nachiketbhatia.webp"
+        "image":"nachiketbhatia.webp",
+        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
     },
 
     {
         "name":"Sunny Kabrawal",
         "intro":"Sunny Kabrawala is a serial entrepreneur and a well-known figure in the Indian startup ecosystem. He has been involved in multiple startups and has been instrumental in shaping the entrepreneurial landscape in India. He has been a speaker at multiple events and has been featured in various media outlets.",
-        "image":"sunnykabarwal.webp"
+        "image":"sunnykabarwal.webp",
+        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
     },
 
     {
         "name":"Deep Kakkad",
         "intro":"Deep Kakkad is a well-established entrepreneur and a well-known figure in the Indian startup ecosystem. He has been involved in multiple startups and has been instrumental in shaping the entrepreneurial landscape in India. He has been a speaker at multiple events and has been featured in various media outlets.",
-        "image":"deepkakad.webp"
+        "image":"deepkakad.webp",
+        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
     },
 
     {
         "name":"Jatin Kataria",
         "intro":"Jatin Kataria is a well-established entrepreneur and a well-known figure in the Indian startup ecosystem. He has been involved in multiple startups and has been instrumental in shaping the entrepreneurial landscape in India. He has been a speaker at multiple events and has been featured in various media outlets.",
-        "image":"jatin.webp"
+        "image":"jatin.webp",
+        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
     },
 
     {
         "name":"dummy name",
         "intro":"this will give the brief intro about the speaker",
-        "image":"dummyimage.jpg"
+        "image":"dummyimage.jpg",
+        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
     },
 
     {
         "name":"Kk Choudhary",
         "intro":"Kk Choudhary is a well-established entrepreneur and a well-known figure in the Indian startup ecosystem. He has been involved in multiple startups and has been instrumental in shaping the entrepreneurial landscape in India. He has been a speaker at multiple events and has been featured in various media outlets.",
-        "image":"kk.webp"
+        "image":"kk.webp",
+        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
     },
 
     {
         "name":"Atul Puri",
         "intro":"this will give the brief intro about the speaker",
-        "image":"atul.webp"
+        "image":"atul.webp",
+        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
     },
     {
         "name":"Mr. Shubham Khanna",
         "intro":"irector of T.I.M.E, JamshedpurAn alumnus of XLRI with outstanding achievements, including 99+%ile in CAT and XATSenior Brand Manager at CIPLA",
-        "image":"shubam.webp"
+        "image":"shubam.webp",
+        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
     },
     {
         "name":"Dr. Akanksha Shukla",
         "intro":"Assistant Professor with a remarkable 12-year teaching tenure Noteworthy publications in SSCI and Scopus indexed journals ",
-        "image":"akanshaa.webp"
+        "image":"akanshaa.webp",
+        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
     }
 
 
