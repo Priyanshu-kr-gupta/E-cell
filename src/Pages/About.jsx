@@ -251,7 +251,7 @@ export default function About() {
 
       {/* Last part */}
       <div className="bg-[#2E3330]  flex justify-center items-center sm:gap-10 flex-col sm:flex-row px-0  sm:px-20">
-        <div className="SVG_animates">
+        <div className="SVG_animates sm:px-0 px-1">
           <svg
             width="631"
             height="374"
