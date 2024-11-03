@@ -13,7 +13,7 @@ function TeamDefinition() {
   return (
     <div className="p-8" ref={teamRef}>
       <motion.h2
-        className="text-2xl font-bold text-white mb-4"
+        className="text-2xl font-bold text-white mb-4 text-center sm:text-left"
         initial={{ opacity: 0, y: -20 }}
         animate={teamView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
@@ -250,7 +250,7 @@ export default function About() {
       </div>
 
       {/* Last part */}
-      <div className="bg-[#2E3330]  flex justify-center items-center gap-10 flex-col sm:flex-row px-0  sm:px-20">
+      <div className="bg-[#2E3330]  flex justify-center items-center sm:gap-10 flex-col sm:flex-row px-0  sm:px-20">
         <div className="SVG_animates">
           <svg
             width="631"
