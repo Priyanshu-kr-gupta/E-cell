@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import data from "../Data/Team.json";
 import { AiOutlineLinkedin, } from 'react-icons/ai';
 import { MdOutlineEmail } from "react-icons/md";
-import teamImg from "/assets/team.png"
+import teamImg from "/assets/user.jpg"
 import "../Css/Team.css"
+import imgpath from "/assets/speaker/dummyimage.jpg"
 
 export default function Team() {
   const [activeSection, setActiveSection] = useState("Faculty");
@@ -18,17 +19,17 @@ export default function Team() {
       </div>
       <div className="w-full h-auto min-h-[80vh] flex teamConatiner">
         <div className="teamSection flex flex-wrap gap-2 justify-center lg:flex-nowrap">
-          {["Faculty","Lead", "Web", "Crn", "Pr", "Corporate"].map((section, index) => (
+          {["Faculty","Lead","Sponsorship", "Web", "Crn", "Pr", "Creative","Operation"].map((section, index) => (
             <button 
               key={index} 
-              className={`p-5 text-white ${activeSection === section ? "bg-[#ff385c]" : "bg-[#2f4f4f]"} hover:bg-[#ff385c] transition-all duration-300`} 
+              className={`p-5 max-[900px]:m-2 min-w-[150px] text-white ${activeSection === section ? "bg-[#ff385c]" : "bg-[#2f4f4f]"} hover:bg-[#ff385c] transition-all duration-300`} 
               onClick={() => setActiveSection(section)}
             >
               {section}
             </button>
           ))}
         </div>
-        <div className="lg:w-[70%] md:w-[80%] sm:w-[90%] w-full max-w-7xl px-4 mb-10">
+        <div className="lg:w-[70%] md:w-[80%] sm:w-[90%] w-full max-w-7xl px-4 mb-5 ">
           <div className="grid gap-5 max-[390px]:gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 lg:gap-10">
             {data[activeSection].map((member, index) => (
               <div className="bg-white w-full h-48 md:h-60 lg:h-72 rounded-lg shadow-md flex relative teamCard" key={index}>
@@ -59,7 +60,27 @@ export default function Team() {
         <h1 className="text-[15vw] md:text-[10vw] sm:text-[12vw] font-bold font-serif leading-tight pr-2  lg:pr-10 md:pr-6 text-right">SPONSERS</h1>
       </div>
       <div className="w-full h-auto p-10 flex flex-wrap">
-
+      <div className='w-full gallery'>
+      
+      <div className='thanksCard'>
+        <img src={imgpath} alt="Profile Picture" className="profile-pic" />
+        <p className='text-white text-[18px] font-semibold font-sans'>1</p>
+      </div>
+      <div className='thanksCard'>
+        <img src={imgpath} alt="Profile Picture" className="profile-pic" />
+        <p className='text-white text-[18px] font-semibold font-sans'>2</p>
+      </div>
+      <div className='thanksCard'>
+        <img src={imgpath} alt="Profile Picture" className="profile-pic" />
+        <p className='text-white text-[18px] font-semibold font-sans'>3</p>
+      </div>
+      <div className='thanksCard'>
+        <img src={imgpath} alt="Profile Picture" className="profile-pic" />
+        <p className='text-white text-[18px] font-semibold font-sans'>4</p>
+      </div>
+    
+      
+    </div>
       </div>
     </div>
   );

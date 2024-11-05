@@ -10,7 +10,7 @@ export default function Sidebar() {
   
 
   return (
-    <div className={` transition-all ease-in-out duration-700 ${menuOpen ? ' h-screen  ' : ''}`}>
+    <div className={`z-50 transition-all ease-in-out duration-700 ${menuOpen ? ' h-screen  ' : ''}`}>
     
       {/* Menu Icon */}
       <div

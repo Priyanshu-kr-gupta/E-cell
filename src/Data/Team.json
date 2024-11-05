@@ -1,142 +1,180 @@
 {
   "Faculty": [
-  {
-  "id": 1,
-  "name": "John Doe",
-  "designation": "Professor",
-  "image": "faculty1.jpg",
-  "email": "john.doe@example.com",
-  "linkedin": "(link unavailable)"
-  },
-  {
-  "id": 2,
-  "name": "Jane Smith",
-  "designation": "Associate Professor",
-  "image": "faculty2.jpg",
-  "email": "jane.smith@example.com",
-  "linkedin": "(link unavailable)"
-  },
-  {
-    "id": 1,
-    "name": "John Doe",
-    "designation": "Professor",
-    "image": "faculty1.jpg",
-    "email": "john.doe@example.com",
-    "linkedin": "(link unavailable)"
-    },
-    {
-    "id": 2,
-    "name": "Jane Smith",
-    "designation": "Associate Professor",
-    "image": "faculty2.jpg",
-    "email": "jane.smith@example.com",
-    "linkedin": "(link unavailable)"
-    },
     {
       "id": 1,
-      "name": "John Doe",
-      "designation": "Professor",
-      "image": "faculty1.jpg",
+      "name": "Dr. Ashok Mandal",
+      "designation": "Faculty",
+      "image": "user.jpg",
       "email": "john.doe@example.com",
       "linkedin": "(link unavailable)"
-      },
-      {
+    },
+    {
       "id": 2,
-      "name": "Jane Smith",
-      "designation": "Associate Professor",
-      "image": "faculty2.jpg",
+      "name": "Dr. Ranjit Prasad",
+      "designation": "Faculty",
+      "image": "user.jpg",
       "email": "jane.smith@example.com",
       "linkedin": "(link unavailable)"
-      }
+    },
+    {
+      "id": 3,
+      "name": "Dr. Ram Krishna",
+      "designation": "Faculty",
+      "image": "user.jpg",
+      "email": "john.doe@example.com",
+      "linkedin": "(link unavailable)"
+    },
+    {
+      "id": 4,
+      "name": "Dr. Kanika Prasad",
+      "designation": "Faculty",
+      "image": "user.jpg",
+      "email": "john.doe@example.com",
+      "linkedin": "(link unavailable)"
+    }
   ],
   "Web": [
-  {
-  "id": 1,
-  "name": "Bob Johnson",
-  "designation": "Web Developer",
-  "image": "web1.jpg",
-  "email": "bob.johnson@example.com",
-  "linkedin": "(link unavailable)"
-  },
-  {
-  "id": 2,
-  "name": "Alice Brown",
-  "designation": "UI/UX Designer",
-  "image": "web2.jpg",
-  "email": "alice.brown@example.com",
-  "linkedin": "(link unavailable)"
-  }
-  ],
-  "Crn": [
-  {
-  "id": 1,
-  "name": "Mike Davis",
-  "designation": "Core Team Member",
-  "image": "crn1.jpg",
-  "email": "mike.davis@example.com",
-  "linkedin": "(link unavailable)"
-  },
-  {
-  "id": 2,
-  "name": "Emily Chen",
-  "designation": "Core Team Member",
-  "image": "crn2.jpg",
-  "email": "emily.chen@example.com",
-  "linkedin": "(link unavailable)"
-  }
-  ],
-  "Pr": [
-  {
-  "id": 1,
-  "name": "Sarah Lee",
-  "designation": "Public Relations",
-  "image": "pr1.jpg",
-  "email": "sarah.lee@example.com",
-  "linkedin": "(link unavailable)"
-  },
-  {
-  "id": 2,
-  "name": "David Kim",
-  "designation": "Public Relations",
-  "image": "pr2.jpg",
-  "email": "david.kim@example.com",
-  "linkedin": "(link unavailable)"
-  }
-  ],
-  "Corporate": [
-  {
-  "id": 1,
-  "name": "Kevin White",
-  "designation": "Corporate Partner",
-  "image": "corporate1.jpg",
-  "email": "kevin.white@example.com",
-  "linkedin": "(link unavailable)"
-  },
-  {
-  "id": 2,
-  "name": "Olivia Patel",
-  "designation": "Corporate Partner",
-  "image": "corporate2.jpg",
-  "email": "olivia.patel@example.com",
-  "linkedin": "(link unavailable)"
-  }
+    {
+      "id": 1,
+      "name": "Abhay Kumar Sharma",
+      "designation": "Web Head",
+      "image": "user.jpg",
+      "email": "user@example.com",
+      "linkedin": "(link unavailable)"
+    },
+    {
+      "id": 2,
+      "name": "Kishan Kumar",
+      "designation": "Web Head",
+      "image": "web2.jpg",
+      "email": "web2@example.com",
+      "linkedin": "(link unavailable)"
+    }
   ],
   "Lead": [
-  {
-  "id": 1,
-  "name": "Google",
-  "designation": "Gold Sponsor",
-  "image": "google.jpg",
-  "email": "google@example.com",
-  "linkedin": "(link unavailable)"
-  },
-  {
-  "id": 2,
-  "name": "Microsoft",
-  "designation": "Silver Sponsor",
-  "image": "microsoft.jpg",
-  "email": "microsoft@example.com",
-  "linkedin": "(link unavailable)"
-  }
+    {
+      "id": 2,
+      "name": "Divyanshu Prasad Soumya",
+      "designation": "President",
+      "image": "lead1.jpg",
+      "email": "lead1@example.com",
+      "linkedin": "(link unavailable)"
+    },
+    {
+      "id": 3,
+      "name": "Vihariika Sundarapalli",
+      "designation": "General Secretary",
+      "image": "general1.jpg",
+      "email": "general1@example.com",
+      "linkedin": "(link unavailable)"
+    },
+    {
+      "id": 2,
+      "name": "Nikhil Mishra",
+      "designation": "General Secretary",
+      "image": "general2.jpg",
+      "email": "general2@example.com",
+      "linkedin": "(link unavailable)"
+    }
+  ],
+  "Operation": [
+    {
+      "id": 1,
+      "name": "Sunil Kumar",
+      "designation": "Operation Head",
+      "image": "operations1.jpg",
+      "email": "operations1@example.com",
+      "linkedin": "(link unavailable)"
+    },
+    {
+      "id": 2,
+      "name": "Jitendra Pandit",
+      "designation": "Operations Head",
+      "image": "operations2.jpg",
+      "email": "operations2@example.com",
+      "linkedin": "(link unavailable)"
+    }
+  ],
+  "Crn": [
+    {
+      "id": 1,
+      "name": "Daniyal Nayeemi",
+      "designation": "CRN Head",
+      "image": "crn1.jpg",
+      "email": "crn1@example.com",
+      "linkedin": "(link unavailable)"
+    }
+  ],
+  "Creative": [
+    {
+      "id": 1,
+      "name": "Shubham Sagar",
+      "designation": "Creative Head",
+      "image": "creative1.jpg",
+      "email": "creative1@example.com",
+      "linkedin": "(link unavailable)"
+    }
+  ],
+  "Pr": [
+    {
+      "id": 1,
+      "name": "Rhishabh Kumar Darshan",
+      "designation": "PR Head External",
+      "image": "pr1.jpg",
+      "email": "pr1@example.com",
+      "linkedin": "(link unavailable)"
+    },
+    {
+      "id": 2,
+      "name": "Amit Kumar Kishu",
+      "designation": "External PR Head",
+      "image": "pr2.jpg",
+      "email": "pr2@example.com",
+      "linkedin": "(link unavailable)"
+    },
+    {
+      "id": 3,
+      "name": "Ishu Kumar",
+      "designation": "PR Head",
+      "image": "pr3.jpg",
+      "email": "pr3@example.com",
+      "linkedin": "(link unavailable)"
+    },
+    {
+      "id": 4,
+      "name": "Mahima Pandey",
+      "designation": "PR Head",
+      "image": "pr4.jpg",
+      "email": "pr4@example.com",
+      "linkedin": "(link unavailable)"
+    }
+  ],
+  "Sponsorship": [
+    {
+      "id": 1,
+      "name": "Shubham Mundhra",
+      "designation": "Sponsorship Head",
+      "image": "sponsorship1.jpg",
+      "email": "sponsorship1@example.com",
+      "linkedin": "(link unavailable)"
+    }
+  ],
+  "Content": [
+    {
+      "id": 1,
+      "name": "Bhartam Shourya Chandel",
+      "designation": "Content Head",
+      "image": "content1.jpg",
+      "email": "content1@example.com",
+      "linkedin": "(link unavailable)"
+    },
+    {
+      "id": 2,
+      "name": "Medha",
+      "designation": "Content Head",
+      "image": "content2.jpg",
+      "email": "content2@example.com",
+      "linkedin": "(link unavailable)"
+    }
   ]
-  }
+}

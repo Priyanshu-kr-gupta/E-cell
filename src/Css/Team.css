@@ -27,7 +27,7 @@
   
   .teamCard:hover .teamHero {
     transform: scale(1.2);
-    left: -25%;
+    /* left: -25%; */
   }
   
   .teamInfo {
