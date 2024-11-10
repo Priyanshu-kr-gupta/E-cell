@@ -35,13 +35,6 @@
     },
 
     {
-        "name":"dummy name",
-        "intro":"this will give the brief intro about the speaker",
-        "image":"dummyimage.jpg",
-        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
-    },
-
-    {
         "name":"Kk Choudhary",
         "intro":"Kk Choudhary is a well-established entrepreneur and a well-known figure in the Indian startup ecosystem. He has been involved in multiple startups and has been instrumental in shaping the entrepreneurial landscape in India. He has been a speaker at multiple events and has been featured in various media outlets.",
         "image":"kk.webp",
