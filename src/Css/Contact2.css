@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.contact-section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-image: url(https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); */
+  background-image: url('/assets/djlh.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.contact-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Slightly lighter shade */
+  z-index: 1; /* Ensure it is behind the content */
+}
+
+.container {
+  position: relative; /* To position content above the overlay */
+  z-index: 2; /* Ensures the content is above the overlay */
+  width: 80%;
+  margin: 0 auto;
+}
+
+.contact-section .section-header {
+  /* margin-bottom: 50px; */
+  /* text-align: center; */
+}
+
+.contact-section .section-header h2 {
+  color: #FFF;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.contact-section .section-header p {
+  color: #FFF;
+  /* text-align: center; */
+}
+
+.contact-section .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start; /* Changed to flex-start */
+  justify-content: space-between;
+}
+
+.contact-section .contact-info {
+  width: 50%;
+}
+
+.contact-section .contact-info-item {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.contact-section .contact-info-icon {
+  height: 70px;
+  width: 70px;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.contact-section .contact-info-icon i {
+  font-size: 35px;
+  line-height: 70px;
+}
+
+.contact-section .contact-info-content {
+  margin-left: 20px;
+}
+
+.contact-section .contact-info-content h4 {
+  color: #1da9c0;
+  font-size: 1.7em;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contact-section .contact-info-content p {
+  color: #FFF;
+  font-size: 1.2em;
+}
+
+.contact-section .contact-form {
+  background-color: #fff;
+  padding: 40px;
+  width: 45%;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.contact-section .contact-form h2 {
+  font-weight: bold;
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.contact-section .contact-form .input-box {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.contact-section .contact-form .input-box input,
+.contact-section .contact-form .input-box textarea {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid #333;
+  outline: none;
+  resize: none;
+}
+
+.contact-section .contact-form .input-box span {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  pointer-events: none;
+  transition: 0.5s;
+  color: #666;
+}
+
+.contact-section .contact-form .input-box input:focus ~ span,
+.contact-section .contact-form .input-box textarea:focus ~ span {
+  color: #e91e63;
+  font-size: 12px;
+  transform: translateY(-20px);
+}
+
+.contact-section .contact-form .input-box input[type="submit"] {
+  width: 100%;
+  background: #00bcd4;
+  color: #FFF;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #00bcd4;
+  transition: 0.5s;
+}
+
+.contact-section .contact-form .input-box input[type="submit"]:hover {
+  background: #FFF;
+  color: #00bcd4;
+}
+
+@media (max-width: 991px) {
+.container {
+    width: 100%;
+  }
+  .contact-section .row {
+    flex-direction: column;
+  }
+
+  .contact-section .contact-info {
+    margin-bottom: 40px;
+    width: 100%;
+  }
+
+  .contact-section .contact-form {
+    width: 100%;
+  }
+}

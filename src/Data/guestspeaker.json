@@ -1,72 +1,57 @@
  [
     {
-        "name":"Shikhar Goel",
-        "intro":"CTO of GeeksforGeeks and an alumnus of IIT Kanpur, Shikhar Goel is a well-established name in the industry. He has been the driving force behind the popular online platform, GeeksforGeeks, and has been instrumental in shaping the tech industry.",
-        "image":"sikhargoel.webp",
-        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
-    },
-    
-    {
-        "name":"Nachiket Bhatia",
-        "intro":"Nachiket Bhatia is a young and dynamic entrepreneur who has made a name for himself in the world of business. He has been the founder of multiple startups and has been instrumental in shaping the entrepreneurial ecosystem in India. He has been a speaker at multiple events and has been featured in various media outlets.",
-        "image":"nachiketbhatia.webp",
-        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
-    },
-
-    {
-        "name":"Sunny Kabrawal",
-        "intro":"Sunny Kabrawala is a serial entrepreneur and a well-known figure in the Indian startup ecosystem. He has been involved in multiple startups and has been instrumental in shaping the entrepreneurial landscape in India. He has been a speaker at multiple events and has been featured in various media outlets.",
-        "image":"sunnykabarwal.webp",
-        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
-    },
-
-    {
-        "name":"Deep Kakkad",
-        "intro":"Deep Kakkad is a well-established entrepreneur and a well-known figure in the Indian startup ecosystem. He has been involved in multiple startups and has been instrumental in shaping the entrepreneurial landscape in India. He has been a speaker at multiple events and has been featured in various media outlets.",
-        "image":"deepkakad.webp",
-        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
-    },
-
-    {
-        "name":"Jatin Kataria",
-        "intro":"Jatin Kataria is a well-established entrepreneur and a well-known figure in the Indian startup ecosystem. He has been involved in multiple startups and has been instrumental in shaping the entrepreneurial landscape in India. He has been a speaker at multiple events and has been featured in various media outlets.",
-        "image":"jatin.webp",
-        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
-    },
-
-    {
-        "name":"dummy name",
-        "intro":"this will give the brief intro about the speaker",
-        "image":"dummyimage.jpg",
-        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
-    },
-
-    {
-        "name":"Kk Choudhary",
-        "intro":"Kk Choudhary is a well-established entrepreneur and a well-known figure in the Indian startup ecosystem. He has been involved in multiple startups and has been instrumental in shaping the entrepreneurial landscape in India. He has been a speaker at multiple events and has been featured in various media outlets.",
-        "image":"kk.webp",
-        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
-    },
-
-    {
-        "name":"Atul Puri",
-        "intro":"this will give the brief intro about the speaker",
-        "image":"atul.webp",
-        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+        "name": "Shikhar Goel",
+        "intro": "GeeksforGeeks CTO",
+        "image": "sikhargoel.webp",
+        "about": "Shikhar Goel is a key figure in the tech industry as the driving force behind GeeksforGeeks. As the CTO, he has significantly contributed to the platform's success."
     },
     {
-        "name":"Mr. Shubham Khanna",
-        "intro":"irector of T.I.M.E, JamshedpurAn alumnus of XLRI with outstanding achievements, including 99+%ile in CAT and XATSenior Brand Manager at CIPLA",
-        "image":"shubam.webp",
-        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+        "name": "Nachiket Bhatia",
+        "intro": "Serial Entrepreneur",
+        "image": "nachiketbhatia.webp",
+        "about": "Nachiket Bhatia is a dynamic entrepreneur with multiple startups. His contributions have shaped India's entrepreneurial ecosystem, and he is a frequent speaker at events."
     },
     {
-        "name":"Dr. Akanksha Shukla",
-        "intro":"Assistant Professor with a remarkable 12-year teaching tenure Noteworthy publications in SSCI and Scopus indexed journals ",
-        "image":"akanshaa.webp",
-        "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+        "name": "Sunny Kabrawal",
+        "intro": "Serial Entrepreneur",
+        "image": "sunnykabarwal.webp",
+        "about": "Sunny Kabrawala is a prominent figure in the Indian startup scene. He has significantly influenced the entrepreneurial landscape and is a regular event speaker."
+    },
+    {
+        "name": "Deep Kakkad",
+        "intro": "Serial Entrepreneur",
+        "image": "deepkakad.webp",
+        "about": "Deep Kakkad is a renowned entrepreneur involved in multiple startups. He has greatly influenced India's startup ecosystem and is a frequent event speaker."
+    },
+    {
+        "name": "Jatin Kataria",
+        "intro": "Serial Entrepreneur",
+        "image": "jatin.webp",
+        "about": "Jatin Kataria is a prominent entrepreneur known for his role in multiple startups. He has impacted India's entrepreneurial landscape and is a regular speaker."
+    },
+    {
+        "name": "Kk Choudhary",
+        "intro": "Serial Entrepreneur",
+        "image": "kk.webp",
+        "about": "Kk Choudhary is a well-known entrepreneur involved in shaping India's startup ecosystem. He frequently speaks at events and is featured in media."
+    },
+    {
+        "name": "Atul Puri",
+        "intro": "Serial Entrepreneur",
+        "image": "atul.webp",
+        "about": "Atul Puri is a leading entrepreneur in India's startup scene. He has been involved in multiple ventures and speaks regularly at various events."
+    },
+    {
+        "name": "Mr. Shubham Khanna",
+        "intro": "XLRI Alumnus",
+        "image": "shubam.webp",
+        "about": "Shubham Khanna, an XLRI alumnus, is a senior brand manager at CIPLA. Known for his achievements, he is a frequent speaker and features in media."
+    },
+    {
+        "name": "Dr. Akanksha Shukla",
+        "intro": "XLRI Alumnus",
+        "image": "akanshaa.webp",
+        "about": "Dr. Akanksha Shukla, an XLRI alumna, has a notable 12-year teaching career. She is a published author and a frequent speaker at various events."
     }
-
-
 ]
 
