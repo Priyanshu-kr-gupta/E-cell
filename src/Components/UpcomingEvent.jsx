@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import data from "../Data/upcomingevent.json";
+import { useState, useEffect } from "react";
+
 import "../Css/UpcomingEvent.css";
 
 export default function UpcomingEvent() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [upcomingEvent,setUpcomingEvent]=useState([]);
+  const [upcomingEvent, setUpcomingEvent] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
 
   const fetchEvents = async () => {
@@ -41,11 +41,10 @@ export default function UpcomingEvent() {
 
     if (!isHovered) {
       sliderInterval = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % upcomingEvent.length);
       }, 3000);
     }
     return () => clearInterval(sliderInterval);
-
   }, [isHovered]);
 
   return (
@@ -67,10 +66,14 @@ export default function UpcomingEvent() {
         ></div>
 
         <div className="w-full p-5">
-          <h3 className="text-2xl font-bold">{upcomingEvent[currentIndex]?.name}</h3>
+          <h3 className="text-2xl font-bold">
+            {upcomingEvent[currentIndex]?.name}
+          </h3>
           <br />
 
-          <p className="text-sm text-left">{upcomingEvent[currentIndex]?.intro}</p>
+          <p className="text-sm text-left">
+            {upcomingEvent[currentIndex]?.intro}
+          </p>
           {/* <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5'>Visit</button> */}
         </div>
       </div>
@@ -98,18 +101,22 @@ export default function UpcomingEvent() {
       </div>
 
       <div className="flex justify-center p-6 space-x-2">
-          {Array(totalPages).fill().map((_, index) => (
+        {Array(totalPages)
+          .fill()
+          .map((_, index) => (
             <button
               key={index + 1}
-              onClick={() => setCurrentPage(index+1)}
+              onClick={() => setCurrentPage(index + 1)}
               className={`px-3 py-1 border rounded ${
-                currentPage === index + 1 ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'
+                currentPage === index + 1
+                  ? "bg-blue-600 text-white"
+                  : "bg-gray-200 text-gray-700"
               }`}
             >
               {index + 1}
             </button>
           ))}
-        </div>
+      </div>
     </div>
   );
 }
