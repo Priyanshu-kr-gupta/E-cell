@@ -52,20 +52,20 @@ export default function UpcomingEvent() {
       <p className="text-4xl sm:text-6xl md:text-6xl lg:text-7xl font-bold m-5">
         Upcoming events
       </p>
-
+  
       <div
         className="w-[80%] h-full bg-[#202729] flex m-2 max-[700px]:flex-col max-[700px]:items-center"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-      {upcomingEvent.length > 0 && (
+   
   <div
     style={{
       backgroundImage: `url(${upcomingEvent[currentIndex]?.banner})`,
     }}
     className="w-[90%] h-[90%] m-[2%] mt-3 bg-cover bg-center rounded-t-lg max-[700px]:h-full"
   ></div>
-)}
+
 
         <div className="w-full p-5">
           <h3 className="text-2xl font-bold">
@@ -119,6 +119,7 @@ export default function UpcomingEvent() {
             </button>
           ))}
       </div>
+    
     </div>
   );
 }
