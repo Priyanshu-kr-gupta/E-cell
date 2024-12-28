@@ -98,6 +98,19 @@ export default function PastEvents() {
           ))}
         </div>
       </div>
+      <div className="flex justify-center mt-4 space-x-2 ">
+      {Array(totalPages).fill().map((_, index) => (
+        <button
+          key={index + 1}
+          onClick={() => setCurrentPage(index+1)}
+          className={`px-3 py-1 border rounded ${
+            currentPage === index + 1 ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'
+          }`}
+        >
+          {index + 1}
+        </button>
+      ))}
+    </div>
     </div>
   );
 }
