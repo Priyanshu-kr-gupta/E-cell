@@ -58,12 +58,14 @@ export default function UpcomingEvent() {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div
-          style={{
-            backgroundImage: `url(${upcomingEvent[currentIndex]?.banner})`,
-          }}
-          className="w-[90%] h-[90%] m-[2%] mt-3 bg-cover bg-center rounded-t-lg max-[700px]:h-full"
-        ></div>
+      {upcomingEvent.length > 0 && (
+  <div
+    style={{
+      backgroundImage: `url(${upcomingEvent[currentIndex]?.banner})`,
+    }}
+    className="w-[90%] h-[90%] m-[2%] mt-3 bg-cover bg-center rounded-t-lg max-[700px]:h-full"
+  ></div>
+)}
 
         <div className="w-full p-5">
           <h3 className="text-2xl font-bold">
