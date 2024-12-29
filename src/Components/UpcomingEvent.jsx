@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "../Css/UpcomingEvent.css";
 
 export default function UpcomingEvent() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState();
   const [isHovered, setIsHovered] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [upcomingEvent, setUpcomingEvent] = useState([]);
@@ -29,6 +29,7 @@ export default function UpcomingEvent() {
       console.log(data);
       setUpcomingEvent(data.upcomingEvents);
       setTotalPages(data.totalPages);
+      setCurrentIndex(0);
     } catch (error) {
       console.error("Error fetching events:", error);
       return null;
@@ -52,7 +53,8 @@ export default function UpcomingEvent() {
       <p className="text-4xl sm:text-6xl md:text-6xl lg:text-7xl font-bold m-5">
         Upcoming events
       </p>
-
+    {
+      upcomingEvent.length>0?
       <div
         className="w-[80%] h-full bg-[#202729] flex m-2 max-[700px]:flex-col max-[700px]:items-center"
         onMouseEnter={() => setIsHovered(true)}
@@ -77,6 +79,12 @@ export default function UpcomingEvent() {
           {/* <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5'>Visit</button> */}
         </div>
       </div>
+      :
+      <p>loading</p>
+
+    }
+      
+      
 
       <div className="w-full text-center">
         <div className="flex p-10 gap-10 overflow-x-scroll slider1">
