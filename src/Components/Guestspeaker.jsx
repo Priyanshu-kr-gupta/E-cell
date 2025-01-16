@@ -79,12 +79,53 @@
 
 
 import React, { useState, useEffect } from "react";
-import speakersData from '../Data/guestspeaker.json';
+// import speakersData from '../Data/guestspeaker.json';
 
 export default function Guestspeaker() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  // speakers
+  const [speakersData,setSpeakersData]=useState([]);
+
+    // Fetch guest speakers data
+    const fetchGuestSpeakers = async () => {
+      try {
+        // setLoading(true);
+        // console.log("Fetching data.")
+        const response = await fetch(
+          import.meta.env.VITE_BACKEND_URL+"/api/public/get-all-guest-speakers",{
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ currentIndex }),
+          }
+        );
+        // console.log("respobse",response)
+        if (!response.ok) {
+          throw new Error("Failed to fetch guest speakers");
+        }
+        const data = await response.json();
+        // console.log("Data is ",data)
+        setSpeakersData(data.guestSpeakers);
+        // setTotalPages(data.totalPages);
+  
+      } catch (error) {
+        console.error("Error fetching guest speakers:", error);
+        setSpeakersData([]);
+      } 
+      // finally {
+      //   setLoading(false);
+      // }
+    };
+useEffect(()=>{
+  fetchGuestSpeakers();
+},[])
+
   useEffect(() => {
+
+    // call speakers 
+    fetchGuestSpeakers();
     if (isHovered) return; // Stop auto-slide if hovered
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % speakersData.length);
@@ -105,22 +146,23 @@ export default function Guestspeaker() {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
+        {speakersData.length?
         <div className="bg-gray-900 text-white p-10 rounded-lg shadow-lg">
           <div className="flex justify-center">
             <div className="w-36 h-36 rounded-full overflow-hidden">
               <img
-                src={`/assets/speaker/${speakersData[currentIndex].image}`}
-                alt={speakersData[currentIndex].name}
+                src={`${speakersData[currentIndex]?.avatar}`}
+                alt={speakersData[currentIndex]?.name}
                 className="w-full h-full object-cover"
               />
             </div>
           </div>
           <div className="mt-5 text-center">
             <h2 className="text-2xl font-semibold mb-2 text-violet-500">
-              {speakersData[currentIndex].name}
+              {speakersData[currentIndex]?.name}
             </h2>
             <p className="text-base font-light text-gray-400 mb-5 mx-auto">
-              {speakersData[currentIndex].intro}
+              {speakersData[currentIndex]?.intro}
             </p>
             <div className="text-lg font-light mx-auto">
               <svg
@@ -132,7 +174,7 @@ export default function Guestspeaker() {
                 <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
                 <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
               </svg>
-              <p className="max-w-2xl mx-auto">{speakersData[currentIndex].about}</p>
+              <p className="max-w-2xl mx-auto">{speakersData[currentIndex]?.about}</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
@@ -145,6 +187,7 @@ export default function Guestspeaker() {
             </div>
           </div>
         </div>
+        :<div>No speakers found</div>}
       </div>
     </div>
   );

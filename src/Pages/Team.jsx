@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import data from "../Data/Team.json";
 import { AiOutlineLinkedin, } from 'react-icons/ai';
 import { MdOutlineEmail } from "react-icons/md";
@@ -8,6 +8,39 @@ import imgpath from "/assets/speaker/dummyimage.jpg"
 
 export default function Team() {
   const [activeSection, setActiveSection] = useState("Faculty");
+  const [teamMembers, setTeamMembers] = useState([]);
+
+ 
+// backend data is not in similar format as frontned saved in json
+// response is having an obect teamMembers and it has array of memmbers wtih designation and other details 
+
+  // fetch team members
+  const fetchTeamMembers = async () => {
+    try {
+      const response = await fetch(import.meta.env.VITE_BACKEND_URL+'/api/public/get-team-members', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ designation: activeSection }),
+      });
+      if (response.ok) {
+        const data = await response.json();
+        // console.log("Rsponse ",data)
+        setTeamMembers(data.teamMembers);
+      } else {
+        console.error('Failed to fetch team members');
+      }
+    } catch (error) {
+      console.error('Error during API call:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchTeamMembers();
+    // console.log("Team members ",teamMembers)
+  }, [activeSection]);
+
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-b from-[#1f1f1f] to-[#303633] text-white pt-10 ">
@@ -31,7 +64,8 @@ export default function Team() {
         </div>
         <div className="lg:w-[70%] md:w-[80%] sm:w-[90%] w-full max-w-7xl px-4 mb-5 ">
           <div className="grid gap-5 max-[390px]:gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 lg:gap-10">
-            {data[activeSection].map((member, index) => (
+            {/* data[activeSection] */}
+            {teamMembers.map((member, index) => (
               <div className="bg-white w-full h-48 md:h-60 lg:h-72 rounded-lg shadow-md flex relative teamCard" key={index}>
                 <img src={teamImg} className="w-full h-full object-cover teamHero"/>
                 <div className="absolute bottom-0 bg-[rgba(0,0,0,0.7)] w-full teamInfo">
