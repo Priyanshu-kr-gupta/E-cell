@@ -8,7 +8,6 @@ export default function PastEvents() {
   const [upcomingEvent, setUpcomingEvent] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-
   const fetchEvents = async () => {
     try {
       const response = await fetch(import.meta.env.VITE_BACKEND_URL + '/api/public/get-past-events', {
@@ -46,8 +45,9 @@ export default function PastEvents() {
 
   if (!upcomingEvent.length) {
     return (
-      <div className="w-full h-screen bg-[#202729] flex justify-center items-center text-white">
-        <p className="text-xl font-semibold">No events to display</p>
+  
+      <div className="flex justify-center items-center h-screen  bg-[#202729]  text-white">
+           <div className="loader">Loading...</div>
       </div>
     );
   }
@@ -74,7 +74,7 @@ export default function PastEvents() {
           <h3 className='text-2xl font-bold'>{upcomingEvent[currentIndex]?.name || "Event Name"}</h3>
           <br />
           <p className='text-sm text-left'>{upcomingEvent[currentIndex]?.intro || "Event description not available."}</p>
-          <Link to={`/EventGallery/${currentIndex}`}>
+          <Link to={`/EventGallery/${upcomingEvent[currentIndex]?._id}`}>
             <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5'>Gallery</button>
           </Link>
         </div>

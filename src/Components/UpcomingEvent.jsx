@@ -1,132 +1,120 @@
 import { useState, useEffect } from "react";
-
 import "../Css/UpcomingEvent.css";
 
 export default function UpcomingEvent() {
-  const [currentIndex, setCurrentIndex] = useState();
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [upcomingEvent, setUpcomingEvent] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
+  const [loading, setLoading] = useState(true);
 
-  const fetchEvents = async () => {
+  const fetchEvents = async (page = 1) => {
     try {
+      setLoading(true);
       const response = await fetch(
-        import.meta.env.VITE_BACKEND_URL + "/api/public/get-upcoming-events",
+        `${import.meta.env.VITE_BACKEND_URL}/api/public/get-upcoming-events`,
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ currentPage }),
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ currentPage: page }),
         }
       );
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch events");
-      }
+      if (!response.ok) throw new Error("Failed to fetch events");
       const data = await response.json();
-      console.log(data);
       setUpcomingEvent(data.upcomingEvents);
       setTotalPages(data.totalPages);
       setCurrentIndex(0);
     } catch (error) {
       console.error("Error fetching events:", error);
-      return null;
+    } finally {
+      setLoading(false);
     }
   };
 
   useEffect(() => {
-    let sliderInterval;
-    fetchEvents();
+    fetchEvents(currentPage);
+  }, [currentPage]);
 
-    if (!isHovered) {
+  useEffect(() => {
+    let sliderInterval;
+    if (!isHovered && !loading && upcomingEvent.length > 1) {
       sliderInterval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % upcomingEvent.length);
       }, 3000);
     }
     return () => clearInterval(sliderInterval);
-  }, [isHovered]);
+  }, [isHovered, loading, upcomingEvent]);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen bg-[#253C44] text-white">
+        <div className="loader">Loading...</div>
+      </div>
+    );
+  }
 
   return (
-    <div className="w-full h-screen bg-[#253C44] flex justify-between items-center text-white flex-col">
-      <p className="text-4xl sm:text-6xl md:text-6xl lg:text-7xl font-bold m-5">
-        Upcoming events
-      </p>
-  
+     <div className='w-full h-screen bg-[#1C2833] flex justify-between items-center text-white flex-col'>
+      <p className="text-4xl sm:text-6xl md:text-6xl lg:text-7xl font-bold m-5">Upcoming events</p>
+      {/* Main Event Card */}
       <div
-        className="w-[80%] h-full bg-[#202729] flex m-2 max-[700px]:flex-col max-[700px]:items-center"
+        className="flex flex-col items-center w-full px-4 py-4 sm:flex-row sm:items-start sm:px-8"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-   
-  <div
-    style={{
-      backgroundImage: `url(${upcomingEvent[currentIndex]?.banner})`,
-    }}
-    className="w-[90%] h-[90%] m-[2%] mt-3 bg-cover bg-center rounded-t-lg max-[700px]:h-full"
-  ></div>
-
-
-        <div className="w-full p-5">
-          <h3 className="text-2xl font-bold">
-            {upcomingEvent[currentIndex]?.name}
-          </h3>
-          <br />
-
-          <p className="text-sm text-left">
-            {upcomingEvent[currentIndex]?.intro}
-          </p>
-          {/* <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5'>Visit</button> */}
-        </div>
-      </div>
-      :
-      <p>loading</p>
-
-    }
-      
-      
-
-      <div className="w-full text-center">
-        <div className="flex p-10 gap-10 overflow-x-scroll slider1">
-          {upcomingEvent.map((info, index) => (
-            <div
-              key={index}
-              className={`w-[80px] h-[80px] flex-shrink-0 ${
-                currentIndex === index ? "border-4 border-yellow-500" : ""
-              }`}
-            >
-              <img
-                src={`${info.banner}`}
-                alt="notfound"
-                className="cursor-pointer w-full h-full object-cover"
-                onClick={() => setCurrentIndex(index)}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-              />
-            </div>
-          ))}
+        <div
+          style={{
+            backgroundImage: `url(${upcomingEvent[currentIndex]?.banner})`,
+          }}
+          className="w-full h-60 bg-cover bg-center rounded-lg shadow-lg sm:w-1/2 sm:h-80"
+        ></div>
+        <div className="mt-5 sm:ml-8 sm:mt-0 sm:w-1/2">
+          <h2 className="text-2xl font-bold">{upcomingEvent[currentIndex]?.name}</h2>
+          <p className="text-gray-300 text-sm mt-3">{upcomingEvent[currentIndex]?.intro}</p>
+          <button className="mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full">
+            Learn More
+          </button>
         </div>
       </div>
 
-      <div className="flex justify-center p-6 space-x-2">
+      {/* Thumbnail Slider */}
+      <div className="flex overflow-x-auto mt-6 px-4 sm:justify-center">
+        {upcomingEvent.map((event, index) => (
+          <div
+            key={index}
+            className={`w-20 h-20 mx-2 flex-shrink-0 rounded-lg overflow-hidden ${
+              currentIndex === index ? "border-2 border-blue-500" : "border border-gray-500"
+            }`}
+            onClick={() => setCurrentIndex(index)}
+          >
+            <img
+              src={event.banner}
+              alt={event.name}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Pagination */}
+      <div className="flex justify-center mt-4 mb-6 space-x-2">
         {Array(totalPages)
           .fill()
           .map((_, index) => (
             <button
-              key={index + 1}
+              key={index}
               onClick={() => setCurrentPage(index + 1)}
-              className={`px-3 py-1 border rounded ${
+              className={`px-3 py-1 rounded ${
                 currentPage === index + 1
                   ? "bg-blue-600 text-white"
-                  : "bg-gray-200 text-gray-700"
+                  : "bg-gray-300 text-gray-800"
               }`}
             >
               {index + 1}
             </button>
           ))}
       </div>
-    
     </div>
   );
 }
