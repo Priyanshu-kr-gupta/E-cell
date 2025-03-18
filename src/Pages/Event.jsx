@@ -17,7 +17,7 @@ export default function Event() {
   const fetchEvents = async () => {
     try {
       const response = await fetch(
-        import.meta.env.VITE_BACKEND_URL + "/api/public/get-upcoming-events",
+        import.meta.env.VITE_BACKEND_URL + "/api/public/get-past-events",
         {
           method: "POST",
           headers: {
