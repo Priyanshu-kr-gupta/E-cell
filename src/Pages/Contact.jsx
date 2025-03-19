@@ -76,10 +76,9 @@ const ContactUs = () => {
                 <input type="email" required name="email" />
                 <span>Email</span>
               </div>
-
               <div className="input-box">
                 <textarea required name="message"></textarea>
-                <span>Type your Message...</span>
+                <span>Type your Message Here...</span>
               </div>
 
               <div className="input-box">
