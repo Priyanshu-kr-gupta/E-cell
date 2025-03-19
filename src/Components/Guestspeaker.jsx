@@ -80,10 +80,11 @@
 
 import React, { useState, useEffect } from "react";
 // import speakersData from '../Data/guestspeaker.json';
+import Marquee from "react-fast-marquee";
 
 export default function Guestspeaker() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
+  // const [isHovered, setIsHovered] = useState(false);
   // speakers
   const [speakersData,setSpeakersData]=useState([]);
 
@@ -118,78 +119,57 @@ export default function Guestspeaker() {
       //   setLoading(false);
       // }
     };
-useEffect(()=>{
-  fetchGuestSpeakers();
-},[])
+
 
   useEffect(() => {
-
-    // call speakers 
     fetchGuestSpeakers();
-    if (isHovered) return; // Stop auto-slide if hovered
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % speakersData.length);
-    }, 2000); // Slide every 3 seconds
-    return () => clearInterval(interval);
-  }, [isHovered, speakersData.length]);
+  }, []);
 
-  const handleMouseEnter = () => setIsHovered(true);
-  const handleMouseLeave = () => setIsHovered(false);
 
   return (
-    <div className="w-full h-screen bg-[#202729] flex flex-col justify-center  items-center text-white">
-      <p className="text-4xl sm:text-6xl md:text-6xl lg:text-7xl font-bold mb-6">
+    <div className="w-full h-screen bg-[#202729] flex flex-col items-center justify-center text-white overflow-hidden pt-8 relative">
+    {/* Heading */}
+    <div className="text-4xl sm:text-6xl md:text-6xl lg:text-7xl font-bold mb-6 absolute top-10">
         Guest Speakers
-      </p>
-      <div
-        className="w-full max-w-7xl"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        {speakersData.length?
-        <div className="bg-gray-900 text-white p-10 rounded-lg shadow-lg">
-          <div className="flex justify-center">
-            <div className="w-36 h-36 rounded-full overflow-hidden">
-              <img
-                src={`${speakersData[currentIndex]?.avatar}`}
-                alt={speakersData[currentIndex]?.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-          <div className="mt-5 text-center">
-            <h2 className="text-2xl font-semibold mb-2 text-violet-500">
-              {speakersData[currentIndex]?.name}
-            </h2>
-            <p className="text-base font-light text-gray-400 mb-5 mx-auto">
-              {speakersData[currentIndex]?.intro}
-            </p>
-            <div className="text-lg font-light mx-auto">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-                fill="currentColor"
-                className="w-8 h-8 mr-auto ml-10 dark:text-violet-400"
-              >
-                <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
-                <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
-              </svg>
-              <p className="max-w-2xl mx-auto">{speakersData[currentIndex]?.about}</p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-                fill="currentColor"
-                className="w-8 h-8 ml-auto mr-10 dark:text-violet-400"
-              >
-                <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
-                <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
-              </svg>
-            </div>
-          </div>
-        </div>
-        :<div>No speakers found</div>}
-      </div>
     </div>
+  
+    {/* Marquee */}
+    {speakersData.length ? (
+      <div className="w-full max-w-[90%] mt-20">
+        <Marquee gradient={false} speed={50} pauseOnHover>
+          {speakersData.map((speaker, index) => (
+            <div
+              key={index}
+              className="w-72 h-[20rem] bg-gray-800 p-5 rounded-xl shadow-lg mx-3 flex flex-col items-center hover:shadow-xl transition-shadow duration-200"
+            >
+              {/* Avatar */}
+              <div className="w-28 h-28 rounded-full mb-5 overflow-hidden border-2 border-violet-400 hover:border-violet-300 transition-colors">
+                <img
+                  src={speaker.avatar}
+                  alt={speaker.name}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform"
+                />
+              </div>
+  
+              {/* Content */}
+              <div className="flex flex-col items-center flex-1 w-full">
+                <h2 className="text-xl font-semibold mb-3 text-center">
+                  {speaker.name}
+                </h2>
+                <div className="relative w-full flex-1">
+                  <p className="text-sm text-gray-300 leading-relaxed px-3 h-full overflow-y-auto scrollbar-hover">
+                    {speaker.about}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Marquee>
+      </div>
+    ) : (
+      <div className="text-gray-400">No speakers found</div>
+    )}
+  </div>
   );
 }
 

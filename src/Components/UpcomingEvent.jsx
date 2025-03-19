@@ -46,7 +46,7 @@ useEffect(() => {
   }
 
   return (
-    <div className="w-full h-screen relative overflow-hidden">
+    <div className="w-full h-screen relative overflow-hidden z-0 border-[15px] border-[#2f4f4f]">
     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 text-white text-center z-10 bg-gradient-to-b from-black/60 to-transparent w-full py-6 sm:py-8">
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-2 animate-fade-in-down">
         Upcoming Events

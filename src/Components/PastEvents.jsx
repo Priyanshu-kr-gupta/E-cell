@@ -46,7 +46,7 @@ useEffect(() => {
   }
 
   return (
-    <div className="w-full h-screen relative overflow-hidden">
+    <div className="w-full h-screen relative overflow-hidden border-[15px] border-[#2f4f4f] z-0">  
     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 text-white text-center z-10 bg-gradient-to-b from-black/60 to-transparent w-full py-6 sm:py-8">
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-2 animate-fade-in-down">
         Past Events
@@ -109,7 +109,7 @@ useEffect(() => {
         </div>
       ))}
       <Link
-        to="/all-events"
+        to="/Events"
         className="flex items-center ml-4 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 self-center"
       >
         View All
