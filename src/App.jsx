@@ -9,6 +9,7 @@ import { Route, Routes , useLocation } from "react-router-dom";
 import Team from './Pages/Team';
 import EventGallery from './Pages/EventGallery';
 import { useEffect } from 'react';
+import Scrollbar from './Components/Scrollbar';
 
 function App() {
   const { pathname } = useLocation();
@@ -20,6 +21,7 @@ function App() {
   return (
     <>
     <Sidebar/>
+    <Scrollbar/>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path='/Events' element={<Event/>}/>
