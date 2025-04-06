@@ -61,7 +61,7 @@ useEffect(() => {
       style={{ backgroundImage: `url(${upcomingEvent[currentIndex]?.banner})` }}
       className="absolute top-0 left-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ease-in-out"
     >
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+      <div className="absolute inset-0 bg-[rgba(0,0,0,0.5)] backdrop-blur-sm" />
     </div>
   
     <div className="absolute top-[25%] left-0 right-0 px-6 sm:px-12 lg:px-24 text-white z-20 space-y-6 transform transition-all duration-500 ease-out">

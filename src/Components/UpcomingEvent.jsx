@@ -11,7 +11,7 @@ export default function UpcomingEvent() {
     try {
       setLoading(true);
 
-      const response = await fetch(import.meta.env.VITE_BACKEND_URL + '/api/public/get-top-past-events', {
+      const response = await fetch(import.meta.env.VITE_BACKEND_URL + '/api/public/get-top-upcoming-events', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ export default function UpcomingEvent() {
 
       const data = await response.json();
      console.log(data)
-      setUpcomingEvent(data.topPastEvents || []); // Default to an empty array
+      setUpcomingEvent(data.topUpcomingEvents || []); // Default to an empty array
 
       setLoading(false);
     } catch (error) {
@@ -47,8 +47,8 @@ useEffect(() => {
 
   return (
     <div className="w-full h-screen relative overflow-hidden z-0 border-[15px] border-[#2f4f4f]">
-    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 text-white text-center z-10 bg-gradient-to-b from-black/60 to-transparent w-full py-6 sm:py-8">
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-2 animate-fade-in-down">
+    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 text-white text-center z-10  w-full py-6 sm:py-8">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-2 animate-fade-in-down ">
         Upcoming Events
       </h1>
       <div className="w-20 h-1 bg-yellow-400 mx-auto rounded-full" />
@@ -59,9 +59,9 @@ useEffect(() => {
     <div
       key={upcomingEvent[currentIndex]?._id}
       style={{ backgroundImage: `url(${upcomingEvent[currentIndex]?.banner})` }}
-      className="absolute top-0 left-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ease-in-out"
+      className="absolute top-0 left-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ease-in-out "
     >
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+      <div className="absolute inset-0 bg-[rgba(0,0,0,0.5)] backdrop-blur-sm" />
     </div>
   
     <div className="absolute top-[25%] left-0 right-0 px-6 sm:px-12 lg:px-24 text-white z-20 space-y-6 transform transition-all duration-500 ease-out">
@@ -108,12 +108,12 @@ useEffect(() => {
           } transition-opacity`} />
         </div>
       ))}
-      <Link
+      {/* <Link
         to="/all-events"
         className="flex items-center ml-4 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 self-center"
       >
         View All
-      </Link>
+      </Link> */}
     </div>
   </div>
   );
