@@ -1,123 +1,183 @@
-import React, { useState,useEffect } from "react";
-import data from "../Data/Team.json";
-import { AiOutlineLinkedin, } from 'react-icons/ai';
-import { MdOutlineEmail } from "react-icons/md";
-import teamImg from "/assets/user.jpg"
-import "../Css/Team.css"
-import imgpath from "/assets/speaker/dummyimage.jpg"
+import React, { useState, useEffect, useCallback } from 'react';
+import { AiOutlineLinkedin } from 'react-icons/ai';
+import { MdOutlineEmail } from 'react-icons/md';
+import teamImgFallback from '/assets/user.jpg';
+import sponsorImg from '/assets/speaker/dummyimage.jpg';
+
+const SECTIONS = [
+  'Faculty',
+  'Lead',
+  'Sponsorship',
+  'Web',
+  'CRN',
+  'PR',
+  'Creative',
+  'Operation',
+];
+
+// Sponsor data with names
+const SPONSORS = [
+  { name: "abc", image: sponsorImg },
+  { name: "dummy", image: sponsorImg },
+  { name: "hello", image: sponsorImg },
+  { name: "world", image: sponsorImg }
+];
 
 export default function Team() {
-  const [activeSection, setActiveSection] = useState("Faculty");
+  const [activeSection, setActiveSection] = useState(SECTIONS[0]);
   const [teamMembers, setTeamMembers] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
- 
-// backend data is not in similar format as frontned saved in json
-// response is having an obect teamMembers and it has array of memmbers wtih designation and other details 
-
-  // fetch team members
-  const fetchTeamMembers = async () => {
+  const fetchTeamMembers = useCallback(async (designation) => {
+    setLoading(true);
+    setError(null);
     try {
-      const response = await fetch(import.meta.env.VITE_BACKEND_URL+'/api/public/get-team-members', {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/public/get-team-members`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ designation: activeSection }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ designation }),
       });
-      if (response.ok) {
-        const data = await response.json();
-        // console.log("Rsponse ",data)
-        setTeamMembers(data.teamMembers);
-      } else {
-        console.error('Failed to fetch team members');
-      }
-    } catch (error) {
-      console.error('Error during API call:', error);
+      if (!res.ok) throw new Error('Fetch failed');
+      const json = await res.json();
+      setTeamMembers(json.teamMembers || []);
+    } catch (err) {
+      setError(err.message);
+      setTeamMembers([]);
+    } finally {
+      setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
-    fetchTeamMembers();
-    // console.log("Team members ",teamMembers)
-  }, [activeSection]);
-
+    fetchTeamMembers(activeSection);
+  }, [activeSection, fetchTeamMembers]);
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-b from-[#1f1f1f] to-[#303633] text-white pt-10 ">
-      <div>
-        <h1 className="text-[15vw] md:text-[10vw] sm:text-[12vw] font-bold font-serif leading-tight pl-2 md:pl-6pl-2 lg:pl-10 md:pl-6">MEET</h1>
-        <h1 className="text-[15vw] md:text-[10vw] sm:text-[12vw] font-bold font-serif leading-tight flex items-center pl-2 lg:pl-10 md:pl-6">THE TEAM 
-          <div className="animate-ping text-[10vw] md:text-[8vw] sm:text-[6vw] lg:text-[6vw] pl-1">|</div> 
-        </h1>
-      </div>
-      <div className="w-full h-auto min-h-[80vh] flex teamConatiner">
-        <div className="teamSection flex flex-wrap gap-2 justify-center lg:flex-nowrap">
-          {["Faculty","Lead","Sponsorship", "Web", "Crn", "Pr", "Creative","Operation"].map((section, index) => (
-            <button 
-              key={index} 
-              className={`p-5 max-[900px]:m-2 min-w-[150px] text-white ${activeSection === section ? "bg-[#ff385c]" : "bg-[#2f4f4f]"} hover:bg-[#ff385c] transition-all duration-300`} 
-              onClick={() => setActiveSection(section)}
-            >
-              {section}
-            </button>
-          ))}
+    <section className="min-h-screen">
+      {/* Hero Header Section - Pure Black Background */}
+      <div className="relative bg-black h-[80vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-black/50 z-1"></div>
+        <div className="absolute inset-0 bg-[url('/assets/team-bg.jpg')] bg-cover bg-center opacity-20"></div>
+        <div className="relative z-2 text-center px-4">
+          <h1 className="text-5xl md:text-7xl font-serif font-bold mb-4 tracking-tight text-white">Meet The Team</h1>
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+            The dedicated individuals behind our success
+          </p>
         </div>
-        <div className="lg:w-[70%] md:w-[80%] sm:w-[90%] w-full max-w-7xl px-4 mb-5 ">
-          <div className="grid gap-5 max-[390px]:gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 lg:gap-10">
-            {/* data[activeSection] */}
-            {teamMembers.map((member, index) => (
-              <div className="bg-white w-full h-48 md:h-60 lg:h-72 rounded-lg shadow-md flex relative teamCard" key={index}>
-                <img src={teamImg} className="w-full h-full object-cover teamHero"/>
-                <div className="absolute bottom-0 bg-[rgba(0,0,0,0.7)] w-full teamInfo">
-                  <div className="flex flex-col justify-around items-center transition-all duration-300 ease-in-out teamInfoVisible">
-                    <div className="text-center md:text-left pt-2 max-[767px]:pt-1">
-                      <h2 className="text-lg font-bold">{member.name}</h2>
-                      <p className="text-sm text-gray-100">{member.designation}</p>
-                    </div>
-                    <div className="w-full flex items-center justify-center p-5 teamInfoHidden">
-                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="mr-4 text-gray-300 hover:text-blue-500">
-                        <AiOutlineLinkedin size={24} />
-                      </a>
-                      <a href={"mailto:" + member.email} className="text-gray-300 hover:text-red-400">
-                      <MdOutlineEmail size={24}/>
-                      </a>
+      </div>
+
+      {/* Navigation Tabs - Different Color (Dark Gray) */}
+      <div className="bg-gray-800 py-8">
+        <div className="max-w-6xl mx-auto px-4">
+          <nav className="flex flex-wrap justify-center gap-2 md:gap-4">
+            {SECTIONS.map(sec => (
+              <button
+                key={sec}
+                onClick={() => setActiveSection(sec)}
+                className={`px-3 py-2 md:px-6 md:py-3 rounded-full text-sm md:text-lg transition-all duration-300 transform ${
+                  activeSection === sec 
+                  ? 'bg-gradient-to-r from-pink-600 to-purple-600 text-white font-medium scale-105' 
+                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                }`}
+              >
+                {sec}
+              </button>
+            ))}
+          </nav>
+        </div>
+      </div>
+
+      {/* Team Members Section - Darker Gray */}
+      <div className="bg-gray-800 py-12">
+        <div className="max-w-6xl mx-auto px-4">
+          {loading && (
+            <div className="flex justify-center py-12">
+              <div className="w-16 h-16 border-4 border-pink-600 border-t-transparent rounded-full animate-spin"></div>
+            </div>
+          )}
+          
+          {error && (
+            <div className="text-center py-12">
+              <div className="inline-block bg-red-900/50 text-red-300 px-6 py-3 rounded-lg">
+                {error}
+              </div>
+            </div>
+          )}
+
+          {!loading && !error && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
+              {teamMembers.map(member => (
+                <div key={member.email} className="group">
+                  <div className="relative overflow-hidden rounded-xl shadow-lg transform transition-all duration-500 hover:scale-105">
+                    <img
+                      src={member.image || teamImgFallback}
+                      alt={member.name}
+                      className="w-full h-64 md:h-72 object-cover"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
+                        <h3 className="text-lg md:text-xl font-bold text-white">{member.name}</h3>
+                        <p className="text-pink-400 font-medium">{member.designation}</p>
+                        
+                        <div className="flex space-x-4 mt-4">
+                          {member.linkedin && (
+                            <a 
+                              href={member.linkedin} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="text-white hover:text-pink-400 transition-colors"
+                            >
+                              <AiOutlineLinkedin size={24} />
+                            </a>
+                          )}
+                          {member.email && (
+                            <a 
+                              href={`mailto:${member.email}`}
+                              className="text-white hover:text-pink-400 transition-colors"
+                            >
+                              <MdOutlineEmail size={24} />
+                            </a>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Sponsors Section - Black Again */}
+      <div className="bg-black py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-center mb-8 md:mb-12 text-white relative">
+            <span className="inline-block px-4 relative z-2">
+              Our Sponsors
+              <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-pink-600 to-purple-600"></span>
+            </span>
+          </h2>
+          
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+            {SPONSORS.map((sponsor, idx) => (
+              <div 
+                key={idx} 
+                className="bg-gray-800 rounded-xl overflow-hidden shadow-lg w-36 h-36 md:w-48 md:h-48 flex flex-col items-center justify-center transition-transform duration-300 hover:transform hover:scale-105"
+              >
+                <img 
+                  src={sponsor.image} 
+                  alt={sponsor.name} 
+                  className="max-w-full max-h-24 md:max-h-32 p-2 md:p-4" 
+                />
+                <p className="text-white font-medium text-sm md:text-base mt-2">{sponsor.name}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
-      <div>
-        <h1 className="text-[15vw] md:text-[10vw] sm:text-[12vw] font-bold font-serif leading-tight pr-2  lg:pr-10 md:pr-6 text-right mt-10">OUR</h1>
-        <h1 className="text-[15vw] md:text-[10vw] sm:text-[12vw] font-bold font-serif leading-tight pr-2  lg:pr-10 md:pr-6 text-right">SPONSERS</h1>
-      </div>
-      <div className="w-full h-auto p-10 flex flex-wrap">
-      <div className='w-full gallery'>
-      
-      <div className='thanksCard'>
-        <img src={imgpath} alt="Profile Picture" className="profile-pic" />
-        <p className='text-white text-[18px] font-semibold font-sans'>1</p>
-      </div>
-      <div className='thanksCard'>
-        <img src={imgpath} alt="Profile Picture" className="profile-pic" />
-        <p className='text-white text-[18px] font-semibold font-sans'>2</p>
-      </div>
-      <div className='thanksCard'>
-        <img src={imgpath} alt="Profile Picture" className="profile-pic" />
-        <p className='text-white text-[18px] font-semibold font-sans'>3</p>
-      </div>
-      <div className='thanksCard'>
-        <img src={imgpath} alt="Profile Picture" className="profile-pic" />
-        <p className='text-white text-[18px] font-semibold font-sans'>4</p>
-      </div>
-    
-      
-    </div>
-      </div>
-    </div>
+    </section>
   );
 }
-
-
